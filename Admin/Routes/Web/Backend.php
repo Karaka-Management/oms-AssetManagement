@@ -8,12 +8,12 @@ use phpOMS\Router\RouteVerb;
 return [
     '^.*/accounting/asset/list.*$' => [
         [
-            'dest' => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementList',
-            'verb' => RouteVerb::GET,
+            'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementList',
+            'verb'       => RouteVerb::GET,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
-                'type'  => PermissionType::READ,
-                'state' => PermissionState::ASSET,
+                'type'   => PermissionType::READ,
+                'state'  => PermissionState::ASSET,
             ],
         ],
     ],
