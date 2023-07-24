@@ -17,7 +17,11 @@
     "description": "Budget Management module.",
     "directory": "AssetManagement",
     "dependencies": {
-        "Controlling": "*"
+        "Admin": "*",
+        "Media": "*",
+        "Finance": "*",
+        "Controlling": "*",
+        "EquipmentManagement": "*"
     },
     "providing": {
         "Navigation": "*"
