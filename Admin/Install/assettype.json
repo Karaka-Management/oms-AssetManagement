@@ -1,0 +1,1610 @@
+[
+    {
+        "industry": 0,
+        "duration": 168,
+        "l11n": {
+            "en": "Halls in lightweight construction",
+            "de": "Hallen in Leichtbauweise"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "Tennis halls, squash courts, etc.",
+            "de": "Tennishallen, Squashhallen u.ä."
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Air domes",
+            "de": "Traglufthallen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "Cold storage halls",
+            "de": "Kühlhallen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 192,
+        "l11n": {
+            "en": "Barracks and sheds",
+            "de": "Baracken und Schuppen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Construction huts",
+            "de": "Baubuden"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Beer tents",
+            "de": "Bierzelte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "Pump houses, transformer station houses and switch houses",
+            "de": "Pumpenhäuser, Trafostationshäuser und Schalthäuser"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 396,
+        "l11n": {
+            "en": "Concrete silo buildings",
+            "de": "Silobauten aus Beton"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 300,
+        "l11n": {
+            "en": "Steel silo buildings",
+            "de": "Silobauten aus Stahl"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 204,
+        "l11n": {
+            "en": "Plastic silo buildings",
+            "de": "Silobauten aus Kunststoff"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 396,
+        "l11n": {
+            "en": "Masonry or concrete chimneys",
+            "de": "Schornsteine aus Mauerwerk oder Beton"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Metal chimneys",
+            "de": "Schornsteine aus Metall"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 300,
+        "l11n": {
+            "en": "Loading ramps",
+            "de": "Laderampen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 228,
+        "l11n": {
+            "en": "Roadways, parking lots and yard pavements with packing layer",
+            "de": "Fahrbahnen, Parkplätze und Hofbefestigungen mit Packlage"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Roadways, parking lots and yard pavements in gravel, crushed stone, slag",
+            "de": "Fahrbahnen, Parkplätze und Hofbefestigungen in Kies, Schotter, Schlacken"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 396,
+        "l11n": {
+            "en": "Road and path bridges made of steel and concrete",
+            "de": "Strafen- und Wegebrücken aus Stahl und Beton"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 180,
+        "l11n": {
+            "en": "Road and path bridges made of wood",
+            "de": "Strafen- und Wegebrücken aus Holz"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 60,
+        "l11n": {
+            "en": "Wooden fencing",
+            "de": "Umzäunungen aus Holz"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 204,
+        "l11n": {
+            "en": "Fencing Other",
+            "de": "Umzäunungen Sonstige"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 228,
+        "l11n": {
+            "en": "Outdoor lighting, street lighting",
+            "de": "Aufenbeleuchtung, Strafenbeleuchtung"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Orientation systems, sign bridges",
+            "de": "Orientierungssysteme, Schilderbrücken"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "Bank reinforcements",
+            "de": "Uferbefestigungen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "Fountains",
+            "de": "Brunnen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 396,
+        "l11n": {
+            "en": "Concrete or masonry drainage systems",
+            "de": "Drainagen aus Beton oder Mauerwerk"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 156,
+        "l11n": {
+            "en": "Clay or plastic drainage systems",
+            "de": "Drainagen aus Ton oder Kunststoff"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "Sewage treatment plants with inlet and outlet",
+            "de": "Kläranlagen m. Zu- und Ableitung"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "Fire water ponds",
+            "de": "Löschwasserteiche"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "Water reservoirs",
+            "de": "Wasserspeicher"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 180,
+        "l11n": {
+            "en": "Green spaces",
+            "de": "Grünanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "Golf courses",
+            "de": "Golfplätze"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 180,
+        "l11n": {
+            "en": "Steam generation (steam boilers with accessories)",
+            "de": "Dampferzeugung (Dampfkessel mit Zubehör)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 228,
+        "l11n": {
+            "en": "Power generation (rectifiers, charging units, emergency power generators, power generators, power converters, etc.)",
+            "de": "Stromerzeugung (Gleichrichter, Ladeaggregate, Notstromaggregate, Stromgeneratoren, Stromumformer usw.)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Accumulators",
+            "de": "Akkumulatoren"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Combined heat and power plants (cogeneration plants)",
+            "de": "Kraft-Wärmekopplungsanlagen (Blockheizkraftwerke)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 192,
+        "l11n": {
+            "en": "Wind power plants",
+            "de": "Windkraftanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "Photovoltaic systems",
+            "de": "Photovoltaikanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "solar systems",
+            "de": "Solaranlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 168,
+        "l11n": {
+            "en": "Hot air, refrigeration systems, compressors, fans, etc.",
+            "de": "Heifluft-, Kälteanlagen, Kompressoren, Ventilatoren usw."
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 180,
+        "l11n": {
+            "en": "Boilers incl. pressure boilers",
+            "de": "Kessel einschl. Druckkessel"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 144,
+        "l11n": {
+            "en": "Water treatment plants",
+            "de": "Wasseraufbereitungsanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 144,
+        "l11n": {
+            "en": "Water softening systems",
+            "de": "Wasserenthärtungsanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 132,
+        "l11n": {
+            "en": "Water purification systems",
+            "de": "Wasserreinigungsanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 144,
+        "l11n": {
+            "en": "Compressed air systems",
+            "de": "Druckluftanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 180,
+        "l11n": {
+            "en": "Heat exchangers",
+            "de": "Wärmetauscher"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Recovery systems",
+            "de": "Rückgewinnungsanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 216,
+        "l11n": {
+            "en": "Measuring and control equipment in general",
+            "de": "Mess- und Regeleinrichtungen allgemein"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Emission measuring devices",
+            "de": "Emissionsmessgeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Material testing devices",
+            "de": "Materialprüfgeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Ultrasonic devices (non-medical)",
+            "de": "Ultraschallgeräte (nicht medizinisch)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Electronic surveying equipment",
+            "de": "Vermessungsgeräte elektronisch"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 144,
+        "l11n": {
+            "en": "Mechanical measuring devices",
+            "de": "Vermessungsgeräte mechanisch"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 168,
+        "l11n": {
+            "en": "Elevators, screw conveyors, roller conveyors, overhead conveyors, conveyor belts, conveyor belts and apron conveyors",
+            "de": "Elevatoren, Förderschnecken, Rollenbahnen, Hängebahnen, Transportbänder, Förderbänder und Plattenbänder"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 396,
+        "l11n": {
+            "en": "Track systems with turntables, switches, signaling systems, etc. in accordance with legal regulations",
+            "de": "Gleisanlagen mit Drehscheiben, Weichen, Signalanlagen u.ä. nach gesetzlichen Vorschriften"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 180,
+        "l11n": {
+            "en": "Track systems with turntables, switches, signaling systems, etc. other",
+            "de": "Gleisanlagen mit Drehscheiben, Weichen, Signalanlagen u.ä. sonstige"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 252,
+        "l11n": {
+            "en": "Crane systems fixed or on rails",
+            "de": "Krananlagen ortsfest oder auf Schienen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 168,
+        "l11n": {
+            "en": "Other crane systems",
+            "de": "Krananlagen sonstige"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 180,
+        "l11n": {
+            "en": "Elevators, winches, working platforms, lifting platforms, scaffolding, stationary lifts",
+            "de": "Aufzüge, Winden, Arbeitsbühnen, Hebebühnen, Gerüste, Hublifte stationär"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 132,
+        "l11n": {
+            "en": "Elevators, winches, work platforms, lifting platforms, scaffolding, mobile lifts",
+            "de": "Aufzüge, Winden, Arbeitsbühnen, Hebebühnen, Gerüste, Hublifte mobil"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 180,
+        "l11n": {
+            "en": "High-bay warehouse",
+            "de": "Hochregallager"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Transport containers, construction containers, office containers and residential containers",
+            "de": "Transportcontainer, Baucontainer, Bürocontainer und Wohncontainer"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Store fittings, restaurant fittings Shop window systems and fittings",
+            "de": "Ladeneinbauten, Gaststätteneinbauten Schaufensteranlagen u. -einbauten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "illuminated advertising",
+            "de": "Lichtreklame"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Showcases, display cases",
+            "de": "Schaukästen, Vitrinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "weighbridges",
+            "de": "Brückenwaagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 168,
+        "l11n": {
+            "en": "Tank and dispensing systems for fuels and lubricants",
+            "de": "Tank- und Zapfanlagen für Treib- und Schmierstoffe"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 300,
+        "l11n": {
+            "en": "Fuel tanks",
+            "de": "Brennstofftanks"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Car washes",
+            "de": "Autowaschanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 168,
+        "l11n": {
+            "en": "Fume extractors, dust extraction systems",
+            "de": "Abzugsvorrichtungen, Entstaubungsvorrichtungen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 132,
+        "l11n": {
+            "en": "Alarm and monitoring systems",
+            "de": "Alarmanlagen und cberwachungsanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "Sprinkler systems",
+            "de": "Sprinkleranlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 300,
+        "l11n": {
+            "en": "Rail vehicles",
+            "de": "Schienenfahrzeuge"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 72,
+        "l11n": {
+            "en": "Passenger cars and station wagons",
+            "de": "Personenkraftwagen und Kombiwagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 84,
+        "l11n": {
+            "en": "Motorcycles, scooters, bicycles, etc.",
+            "de": "Motorräder, Motorroller, Fahrräder u.ä."
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Trucks, articulated lorries, tippers",
+            "de": "Lastkraftwagen, Sattelschlepper, Kipper"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 144,
+        "l11n": {
+            "en": "Tractors and tractors",
+            "de": "Traktoren und Schlepper"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Small tractors",
+            "de": "Kleintraktoren"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 132,
+        "l11n": {
+            "en": "Trailers, semi-trailers, swap bodies",
+            "de": "Anhänger, Auflieger, Wechselaufbauten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Buses and coaches",
+            "de": "Omnibusse"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Fire engines",
+            "de": "Feuerwehrfahrzeuge"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 72,
+        "l11n": {
+            "en": "Rescue vehicles and ambulances",
+            "de": "Rettungsfahrzeuge und Krankentransportfahrzeuge"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Motorhomes, caravans",
+            "de": "Wohnmobile, Wohnwagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 144,
+        "l11n": {
+            "en": "construction trailers",
+            "de": "Bauwagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 252,
+        "l11n": {
+            "en": "Aircraft under 20 tons maximum permissible flight weight",
+            "de": "Flugzeuge unter 20 t höchstzulässigem Fluggewicht"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 228,
+        "l11n": {
+            "en": "Rotorcraft (helicopters)",
+            "de": "Drehflügler (Hubschrauber)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 60,
+        "l11n": {
+            "en": "Hot air balloons",
+            "de": "Heifluftballone"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Airships",
+            "de": "Luftschiffe"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "launches",
+            "de": "Barkassen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 360,
+        "l11n": {
+            "en": "pontoons",
+            "de": "Pontons"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 240,
+        "l11n": {
+            "en": "sailing yachts",
+            "de": "Segelyachten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Other means of transportation (electric carts, forklifts, pallet trucks, etc.)",
+            "de": "sonstige Beförderungsmittel (Elektrokarren, Stapler, Hubwagen usw.)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 156,
+        "l11n": {
+            "en": "dressing machines",
+            "de": "Abrichtmaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 156,
+        "l11n": {
+            "en": "bending machines",
+            "de": "Biegemaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 192,
+        "l11n": {
+            "en": "Stationary drilling machines",
+            "de": "Bohrmaschinen stationär"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Mobile drilling machines",
+            "de": "Bohrmaschinen mobil"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 84,
+        "l11n": {
+            "en": "Drill hammers and pneumatic hammers",
+            "de": "Bohrhämmer und Presslufthämmer"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Brushing machines",
+            "de": "Bürstmaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 192,
+        "l11n": {
+            "en": "Lathes",
+            "de": "Drehbänke"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 180,
+        "l11n": {
+            "en": "Stationary milling machines",
+            "de": "Fräsmaschinen stationär"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Mobile milling machines",
+            "de": "Fräsmaschinen mobil"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 84,
+        "l11n": {
+            "en": "Spark erosion machines",
+            "de": "Funkenerosionsmaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 192,
+        "l11n": {
+            "en": "Planing machines stationary",
+            "de": "Hobelmaschinen stationär"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Mobile planing machines",
+            "de": "Hobelmaschinen mobil"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 156,
+        "l11n": {
+            "en": "Polishing machines stationary",
+            "de": "Poliermaschinen stationär"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 60,
+        "l11n": {
+            "en": "Mobile polishing machines",
+            "de": "Poliermaschinen mobil"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 168,
+        "l11n": {
+            "en": "Presses and punching machines",
+            "de": "Pressen und Stanzen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Upsetting machines",
+            "de": "Stauchmaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 132,
+        "l11n": {
+            "en": "Tampers and vibrating plates",
+            "de": "Stampfer und Rüttelplatten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 168,
+        "l11n": {
+            "en": "All types of stationary saws",
+            "de": "Sägen aller Art stationär"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "All types of mobile saws",
+            "de": "Sägen aller Art mobil"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Stationary cut-off machines",
+            "de": "Trennmaschinen stationär"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 84,
+        "l11n": {
+            "en": "Mobile cutting machines",
+            "de": "Trennmaschinen mobil"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Sandblasting blowers",
+            "de": "Sandstrahlgebläse"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 180,
+        "l11n": {
+            "en": "Stationary sanding machines",
+            "de": "Schleifmaschinen stationär"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Mobile grinding machines",
+            "de": "Schleifmaschinen mobil"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 156,
+        "l11n": {
+            "en": "Cutting machines and shears stationary",
+            "de": "Schneidemaschinen und Scheren stationär"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Cutting machines and shears mobile",
+            "de": "Schneidemaschinen und Scheren mobil"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 72,
+        "l11n": {
+            "en": "Shredders",
+            "de": "Shredder"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 156,
+        "l11n": {
+            "en": "Welding and soldering equipment",
+            "de": "Schweifgeräte und Lötgeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 156,
+        "l11n": {
+            "en": "Injection molding machines",
+            "de": "Spritzgussmaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Filling machines",
+            "de": "Abfüllanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 156,
+        "l11n": {
+            "en": "Packaging machines, film sealers",
+            "de": "Verpackungsmaschinen, Folienschweifgeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 144,
+        "l11n": {
+            "en": "Collating machines",
+            "de": "Zusammentragmaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Stamping machines",
+            "de": "Stempelmaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Banding machines",
+            "de": "Banderoliermaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 156,
+        "l11n": {
+            "en": "Other processing and finishing machines (bending, gluing, pointing, etching, coating, printing, anodizing, degreasing, deburring, eroding, labelling, folding, dyeing, filing, casting, electroplating, engraving, hardening, stapling, painting, riveting)",
+            "de": "Sonstige Be- und Verarbeitungsmaschinen (Abkanten, Anleimen, Anspitzen, Ätzen, Beschichten, Drucken, Eloxieren, Entfetten, Entgraten, Erodieren, Etikettieren, Falzen, Färben, Feilen, Giefen, Galvanisieren, Gravieren, Härten, Heften, Lackieren, Nieten)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 168,
+        "l11n": {
+            "en": "Economic goods of workshop, laboratory and storage equipment",
+            "de": "Wirtschaftsgüter der Werkstätten-, Labor- und Lagereinrichtungen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Store equipment assets",
+            "de": "Wirtschaftsgüter der Ladeneinrichtungen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 72,
+        "l11n": {
+            "en": "Exhibition stands",
+            "de": "Messestände"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Refrigeration equipment",
+            "de": "Kühleinrichtungen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 132,
+        "l11n": {
+            "en": "Air conditioners (mobile)",
+            "de": "Klimageräte (mobil)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Ventilation units, air extraction units (mobile)",
+            "de": "Belüftungsgeräte, Entlüftungsgeräte (mobil)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 60,
+        "l11n": {
+            "en": "Grease separators",
+            "de": "Fettabscheider"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 72,
+        "l11n": {
+            "en": "Magnetic separators",
+            "de": "Magnetabscheider"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 60,
+        "l11n": {
+            "en": "Wet separators",
+            "de": "Nassabscheider"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 132,
+        "l11n": {
+            "en": "Hot air blowers, cold air blowers (mobile)",
+            "de": "Heifluftgebläse, Kaltluftgebläse (mobil)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Space heaters (mobile)",
+            "de": "Raumheizgeräte (mobil)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 72,
+        "l11n": {
+            "en": "Work tents",
+            "de": "Arbeitszelte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Telephone exchange systems",
+            "de": "Fernsprechnebenstellenanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "General communication terminals",
+            "de": "Kommunikationsendgeräte Allgemein"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 60,
+        "l11n": {
+            "en": "Mobile radio terminals",
+            "de": "Mobilfunkendgeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 72,
+        "l11n": {
+            "en": "Text terminals (fax machines, etc.)",
+            "de": "Textendeinrichtungen (Faxgeräte u.ä.)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 132,
+        "l11n": {
+            "en": "Company radio systems",
+            "de": "Betriebsfunkanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Antenna masts",
+            "de": "Antennenmasten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Addressing machines, enveloping machines, franking machines",
+            "de": "Adressiermaschinen, Kuvertiermaschinen, Frankiermaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Pagination machines",
+            "de": "Paginiermaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 84,
+        "l11n": {
+            "en": "Mainframe computers",
+            "de": "Grofrechner"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 36,
+        "l11n": {
+            "en": "Workstations, personal computers, notebooks and their peripherals (printers, scanners, monitors, etc.)",
+            "de": "Workstations, Personalcomputer, Notebooks und deren Peripheriegeräte (Drucker, Scanner, Bildschirme u.ä.)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 84,
+        "l11n": {
+            "en": "Photo, film, video and audio equipment (televisions, CD players, recorders, loudspeakers, radios, amplifiers, cameras, monitors, etc.)",
+            "de": "Foto-, Film-, Video- und Audiogeräte (Fernseher, CD-Player, Recorder, Lautsprecher, Verstärker, Kameras, Monitore u.ä.)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Public address systems",
+            "de": "Beschallungsanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Presentation devices, data display devices",
+            "de": "Präsentationsgeräte, Datensichtgeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 72,
+        "l11n": {
+            "en": "cash registers",
+            "de": "Registrierkassen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Typewriters",
+            "de": "Schreibmaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Electronic drawing equipment",
+            "de": "Zeichengeräte elektronisch"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 168,
+        "l11n": {
+            "en": "Mechanical drawing machines",
+            "de": "Zeichengeräte mechanisch"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 84,
+        "l11n": {
+            "en": "Duplicating machines",
+            "de": "Vervielfältigungsgeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Time recording devices",
+            "de": "Zeiterfassungsgeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 84,
+        "l11n": {
+            "en": "Money validators, money sorters, money changers and money counters",
+            "de": "Geldprüfgeräte, Geldsortiergeräte, Geldwechselgeräte und Geldzählgeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Shredders (document shredders)",
+            "de": "Reifwölfe (Aktenvernichter)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Card readers (EC, credit)",
+            "de": "Kartenleser (EC-, Kredit-)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 156,
+        "l11n": {
+            "en": "Office furniture",
+            "de": "Büromöbel"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Sales counters",
+            "de": "Verkaufstheken"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Sales booths, sales stands",
+            "de": "Verkaufsbuden, Verkaufsstände"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Plantings in buildings",
+            "de": "Bepflanzungen in Gebäuden"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 168,
+        "l11n": {
+            "en": "Steel cabinets",
+            "de": "Stahlschränke"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 276,
+        "l11n": {
+            "en": "Armored cabinets, safes",
+            "de": "Panzerschränke, Tresore"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 300,
+        "l11n": {
+            "en": "Safe systems",
+            "de": "Tresoranlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Carpets normal",
+            "de": "Teppiche normale"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 180,
+        "l11n": {
+            "en": "High-quality carpets (from DM 1,000\/m2)",
+            "de": "Teppiche hochwertige (ab 1.000 DM\/m2)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 180,
+        "l11n": {
+            "en": "Works of art (excluding works by recognized artists)",
+            "de": "Kunstwerke (ohne Werke anerkannter Künstler)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 132,
+        "l11n": {
+            "en": "Scales (fruit, vegetable, meat, etc.)",
+            "de": "Waagen (Obst-, Gemüse-, Fleisch- u.ä.)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "pneumatic tube systems",
+            "de": "Rohrpostanlagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 72,
+        "l11n": {
+            "en": "Small concrete mixers",
+            "de": "Betonkleinmischer"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "floor polishers",
+            "de": "Bohnermaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Disinfection devices",
+            "de": "Desinfektionsgeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 84,
+        "l11n": {
+            "en": "Dishwashers and glasswashers",
+            "de": "Geschirr- und Gläserspülmaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "High-pressure cleaners (steam and water)",
+            "de": "Hochdruckreiniger (Dampf- und Wasser-)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 84,
+        "l11n": {
+            "en": "Industrial vacuum cleaners",
+            "de": "Industriestaubsauger"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Sweepers",
+            "de": "Kehrmaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Sweepers",
+            "de": "Räumgeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Sterilizers",
+            "de": "Sterilisatoren"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 84,
+        "l11n": {
+            "en": "Carpet cleaners (portable)",
+            "de": "Teppichreinigungsgeräte (transportabel)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Washing machines",
+            "de": "Waschmaschinen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 60,
+        "l11n": {
+            "en": "Building drying and dehumidifying appliances",
+            "de": "Bautrocknungs- und Entfeuchtungsgeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Tumble dryers",
+            "de": "Wäschetrockner"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 84,
+        "l11n": {
+            "en": "Beverage vending machines, reverse vending machines",
+            "de": "Getränkeautomaten, Leergutautomaten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 60,
+        "l11n": {
+            "en": "Vending machines",
+            "de": "Warenautomaten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Cigarette vending machines",
+            "de": "Zigarettenautomaten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 60,
+        "l11n": {
+            "en": "Passport photo machines",
+            "de": "Passbildautomaten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 60,
+        "l11n": {
+            "en": "Business card machines",
+            "de": "Visitenkartenautomaten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 48,
+        "l11n": {
+            "en": "Gambling machines (machines with the possibility of winning)",
+            "de": "Geldspielgeräte (Spielgeräte mit Gewinnmöglichkeit)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Music machines",
+            "de": "Musikautomaten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 72,
+        "l11n": {
+            "en": "video machines",
+            "de": "Videoautomaten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 60,
+        "l11n": {
+            "en": "Other amusement machines (e.g. pinball machines)",
+            "de": "sonstige Unterhaltungsautomaten (z.B. Flipper)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "flagpoles",
+            "de": "Fahnenmasten"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "refrigerators",
+            "de": "Kühlschränke"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 156,
+        "l11n": {
+            "en": "Laboratory equipment (microscopes, precision balances, etc.)",
+            "de": "Laborgeräte (Mikroskope, Präzisionswaagen u.ä.)"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 96,
+        "l11n": {
+            "en": "Microwave ovens",
+            "de": "Mikrowellengeräte"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Lawn mowers",
+            "de": "Rasenmäher"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 108,
+        "l11n": {
+            "en": "Toilet cubicles and toilet trailers",
+            "de": "Toilettenkabinen und Toilettenwagen"
+        }
+    },
+    {
+        "industry": 0,
+        "duration": 120,
+        "l11n": {
+            "en": "Centrifuges",
+            "de": "Zentrifugen"
+        }
+    }
+]

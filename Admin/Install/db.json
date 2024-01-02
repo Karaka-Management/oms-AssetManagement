@@ -1,0 +1,400 @@
+{
+    "assetmgmt_asset_type": {
+        "name": "assetmgmt_asset_type",
+        "fields": {
+            "assetmgmt_asset_type_id": {
+                "name": "assetmgmt_asset_type_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "assetmgmt_asset_type_name": {
+                "name": "assetmgmt_asset_type_name",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "assetmgmt_asset_type_depreciation_duration": {
+                "name": "assetmgmt_asset_type_depreciation_duration",
+                "type": "INT",
+                "null": false
+            },
+            "assetmgmt_asset_type_industry": {
+                "name": "assetmgmt_asset_type_industry",
+                "type": "INT",
+                "null": false
+            }
+        }
+    },
+    "assetmgmt_asset_type_l11n": {
+        "name": "assetmgmt_asset_type_l11n",
+        "fields": {
+            "assetmgmt_asset_type_l11n_id": {
+                "name": "assetmgmt_asset_type_l11n_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "assetmgmt_asset_type_l11n_title": {
+                "name": "assetmgmt_asset_type_l11n_title",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "assetmgmt_asset_type_l11n_type": {
+                "name": "assetmgmt_asset_type_l11n_type",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "assetmgmt_asset_type",
+                "foreignKey": "assetmgmt_asset_type_id"
+            },
+            "assetmgmt_asset_type_l11n_lang": {
+                "name": "assetmgmt_asset_type_l11n_lang",
+                "type": "VARCHAR(2)",
+                "null": false,
+                "foreignTable": "language",
+                "foreignKey": "language_639_1"
+            }
+        }
+    },
+    "assetmgmt_asset": {
+        "name": "assetmgmt_asset",
+        "fields": {
+            "assetmgmt_asset_id": {
+                "name": "assetmgmt_asset_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "assetmgmt_asset_name": {
+                "name": "assetmgmt_asset_name",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "assetmgmt_asset_number": {
+                "name": "assetmgmt_asset_number",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "assetmgmt_asset_status": {
+                "name": "assetmgmt_asset_status",
+                "type": "TINYINT",
+                "null": false
+            },
+            "assetmgmt_asset_type": {
+                "name": "assetmgmt_asset_type",
+                "type": "INT",
+                "foreignTable": "assetmgmt_asset_type",
+                "foreignKey": "assetmgmt_asset_type_id"
+            },
+            "assetmgmt_asset_info": {
+                "name": "assetmgmt_asset_info",
+                "type": "TEXT",
+                "null": false
+            },
+            "assetmgmt_asset_created_at": {
+                "name": "assetmgmt_asset_created_at",
+                "type": "DATETIME",
+                "null": false
+            },
+            "assetmgmt_asset_responsible": {
+                "name": "assetmgmt_asset_responsible",
+                "type": "INT",
+                "null": true,
+                "default": true,
+                "foreignTable": "account",
+                "foreignKey": "account_id"
+            },
+            "assetmgmt_asset_unit": {
+                "name": "assetmgmt_asset_unit",
+                "type": "INT",
+                "default": null,
+                "null": true,
+                "foreignTable": "unit",
+                "foreignKey": "unit_id"
+            }
+        }
+    },
+    "assetmgmt_attr_type": {
+        "name": "assetmgmt_attr_type",
+        "fields": {
+            "assetmgmt_attr_type_id": {
+                "name": "assetmgmt_attr_type_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "assetmgmt_attr_type_name": {
+                "name": "assetmgmt_attr_type_name",
+                "type": "VARCHAR(255)",
+                "null": false,
+                "unique": true
+            },
+            "assetmgmt_attr_type_datatype": {
+                "name": "assetmgmt_attr_type_datatype",
+                "type": "INT(11)",
+                "null": false
+            },
+            "assetmgmt_attr_type_fields": {
+                "name": "assetmgmt_attr_type_fields",
+                "type": "INT(11)",
+                "null": false
+            },
+            "assetmgmt_attr_type_custom": {
+                "name": "assetmgmt_attr_type_custom",
+                "type": "TINYINT(1)",
+                "null": false
+            },
+            "assetmgmt_attr_type_required": {
+                "description": "Every asset must have this attribute type if set to true.",
+                "name": "assetmgmt_attr_type_required",
+                "type": "TINYINT(1)",
+                "null": false
+            },
+            "assetmgmt_attr_type_pattern": {
+                "description": "This is a regex validation pattern.",
+                "name": "assetmgmt_attr_type_pattern",
+                "type": "VARCHAR(255)",
+                "null": false
+            }
+        }
+    },
+    "assetmgmt_attr_type_l11n": {
+        "name": "assetmgmt_attr_type_l11n",
+        "fields": {
+            "assetmgmt_attr_type_l11n_id": {
+                "name": "assetmgmt_attr_type_l11n_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "assetmgmt_attr_type_l11n_title": {
+                "name": "assetmgmt_attr_type_l11n_title",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "assetmgmt_attr_type_l11n_type": {
+                "name": "assetmgmt_attr_type_l11n_type",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "assetmgmt_attr_type",
+                "foreignKey": "assetmgmt_attr_type_id"
+            },
+            "assetmgmt_attr_type_l11n_lang": {
+                "name": "assetmgmt_attr_type_l11n_lang",
+                "type": "VARCHAR(2)",
+                "null": false,
+                "foreignTable": "language",
+                "foreignKey": "language_639_1"
+            }
+        }
+    },
+    "assetmgmt_attr_value": {
+        "name": "assetmgmt_attr_value",
+        "fields": {
+            "assetmgmt_attr_value_id": {
+                "name": "assetmgmt_attr_value_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "assetmgmt_attr_value_default": {
+                "name": "assetmgmt_attr_value_default",
+                "type": "TINYINT(1)",
+                "null": false
+            },
+            "assetmgmt_attr_value_valueStr": {
+                "name": "assetmgmt_attr_value_valueStr",
+                "type": "VARCHAR(255)",
+                "null": true,
+                "default": null
+            },
+            "assetmgmt_attr_value_valueInt": {
+                "name": "assetmgmt_attr_value_valueInt",
+                "type": "INT(11)",
+                "null": true,
+                "default": null
+            },
+            "assetmgmt_attr_value_valueDec": {
+                "name": "assetmgmt_attr_value_valueDec",
+                "type": "DECIMAL(19,5)",
+                "null": true,
+                "default": null
+            },
+            "assetmgmt_attr_value_valueDat": {
+                "name": "assetmgmt_attr_value_valueDat",
+                "type": "DATETIME",
+                "null": true,
+                "default": null
+            },
+            "assetmgmt_attr_value_unit": {
+                "name": "assetmgmt_attr_value_unit",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "assetmgmt_attr_value_deptype": {
+                "name": "assetmgmt_attr_value_deptype",
+                "type": "INT(11)",
+                "null": true,
+                "default": null,
+                "foreignTable": "assetmgmt_attr_type",
+                "foreignKey": "assetmgmt_attr_type_id"
+            },
+            "assetmgmt_attr_value_depvalue": {
+                "name": "assetmgmt_attr_value_depvalue",
+                "type": "INT(11)",
+                "null": true,
+                "default": null,
+                "foreignTable": "assetmgmt_attr_value",
+                "foreignKey": "assetmgmt_attr_value_id"
+            }
+        }
+    },
+    "assetmgmt_attr_value_l11n": {
+        "name": "assetmgmt_attr_value_l11n",
+        "fields": {
+            "assetmgmt_attr_value_l11n_id": {
+                "name": "assetmgmt_attr_value_l11n_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "assetmgmt_attr_value_l11n_title": {
+                "name": "assetmgmt_attr_value_l11n_title",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "assetmgmt_attr_value_l11n_value": {
+                "name": "assetmgmt_attr_value_l11n_value",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "assetmgmt_attr_value",
+                "foreignKey": "assetmgmt_attr_value_id"
+            },
+            "assetmgmt_attr_value_l11n_lang": {
+                "name": "assetmgmt_attr_value_l11n_lang",
+                "type": "VARCHAR(2)",
+                "null": false,
+                "foreignTable": "language",
+                "foreignKey": "language_639_1"
+            }
+        }
+    },
+    "assetmgmt_asset_attr_default": {
+        "name": "assetmgmt_asset_attr_default",
+        "fields": {
+            "assetmgmt_asset_attr_default_id": {
+                "name": "assetmgmt_asset_attr_default_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "assetmgmt_asset_attr_default_type": {
+                "name": "assetmgmt_asset_attr_default_type",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "assetmgmt_attr_type",
+                "foreignKey": "assetmgmt_attr_type_id"
+            },
+            "assetmgmt_asset_attr_default_value": {
+                "name": "assetmgmt_asset_attr_default_value",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "assetmgmt_attr_value",
+                "foreignKey": "assetmgmt_attr_value_id"
+            }
+        }
+    },
+    "assetmgmt_asset_attr": {
+        "name": "assetmgmt_asset_attr",
+        "fields": {
+            "assetmgmt_asset_attr_id": {
+                "name": "assetmgmt_asset_attr_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "assetmgmt_asset_attr_asset": {
+                "name": "assetmgmt_asset_attr_asset",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "assetmgmt_asset",
+                "foreignKey": "assetmgmt_asset_id"
+            },
+            "assetmgmt_asset_attr_type": {
+                "name": "assetmgmt_asset_attr_type",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "assetmgmt_attr_type",
+                "foreignKey": "assetmgmt_attr_type_id"
+            },
+            "assetmgmt_asset_attr_value": {
+                "name": "assetmgmt_asset_attr_value",
+                "type": "INT(11)",
+                "null": true,
+                "default": null,
+                "foreignTable": "assetmgmt_attr_value",
+                "foreignKey": "assetmgmt_attr_value_id"
+            }
+        }
+    },
+    "assetmgmt_asset_media": {
+        "name": "assetmgmt_asset_media",
+        "fields": {
+            "assetmgmt_asset_media_id": {
+                "name": "assetmgmt_asset_media_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "assetmgmt_asset_media_asset": {
+                "name": "assetmgmt_asset_media_asset",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "assetmgmt_asset",
+                "foreignKey": "assetmgmt_asset_id"
+            },
+            "assetmgmt_asset_media_media": {
+                "name": "assetmgmt_asset_media_media",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "media",
+                "foreignKey": "media_id"
+            }
+        }
+    },
+    "assetmgmt_asset_note": {
+        "name": "assetmgmt_asset_note",
+        "fields": {
+            "assetmgmt_asset_note_id": {
+                "name": "assetmgmt_asset_note_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "assetmgmt_asset_note_asset": {
+                "name": "assetmgmt_asset_note_asset",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "assetmgmt_asset",
+                "foreignKey": "assetmgmt_asset_id"
+            },
+            "assetmgmt_asset_note_doc": {
+                "name": "assetmgmt_asset_note_doc",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "editor_doc",
+                "foreignKey": "editor_doc_id"
+            }
+        }
+    }
+}

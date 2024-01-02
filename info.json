@@ -14,17 +14,18 @@
         "name": "Jingga",
         "website": "jingga.app"
     },
-    "description": "Budget Management module.",
     "directory": "AssetManagement",
     "dependencies": {
         "Admin": "*",
         "Media": "*",
         "Finance": "*",
         "Controlling": "*",
-        "EquipmentManagement": "*"
+        "EquipmentManagement": "*",
+        "Editor": "1.0.0"
     },
     "providing": {
-        "Navigation": "*"
+        "Navigation": "*",
+        "Media": "*"
     },
     "load": [
         {

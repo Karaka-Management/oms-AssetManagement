@@ -1,0 +1,30 @@
+[
+    {
+        "type": "type",
+        "name": "equipment_profile_image",
+        "l11n": [
+            {
+                "title": "Profile image",
+                "lang": "en"
+            },
+            {
+                "title": "Profilbild",
+                "lang": "de"
+            }
+        ]
+    },
+    {
+        "type": "collection",
+        "create_directory": true,
+        "name": "AssetManagement",
+        "virtualPath": "/Modules",
+        "user": 1
+    },
+    {
+        "type": "collection",
+        "create_directory": true,
+        "name": "Asset",
+        "virtualPath": "/Modules/AssetManagement",
+        "user": 1
+    }
+]

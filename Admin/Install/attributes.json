@@ -1,0 +1,178 @@
+[
+    {
+        "name": "is_gauge",
+        "l11n": {
+            "en": "Gauge",
+            "de": "Messgerät"
+        },
+        "value_type": 1,
+        "is_custom_allowed": false,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": [
+            {
+                "value": 0
+            },
+            {
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "insurance_provider",
+        "l11n": {
+            "en": "Insurance provider",
+            "de": "Versicherung"
+        },
+        "value_type": 2,
+        "is_custom_allowed": true,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": []
+    },
+    {
+        "name": "insurance_number",
+        "l11n": {
+            "en": "Insurance number",
+            "de": "Versicherungsnummer"
+        },
+        "value_type": 2,
+        "is_custom_allowed": true,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": []
+    },
+    {
+        "name": "leasing_provider",
+        "l11n": {
+            "en": "Leasing provider",
+            "de": "Leasingsnummer"
+        },
+        "value_type": 2,
+        "is_custom_allowed": true,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": []
+    },
+    {
+        "name": "leasing_number",
+        "l11n": {
+            "en": "Leasing number",
+            "de": "Leasingsnummer"
+        },
+        "value_type": 2,
+        "is_custom_allowed": true,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": []
+    },
+    {
+        "name": "leasing_end",
+        "l11n": {
+            "en": "Leasing end",
+            "de": "Leasingende"
+        },
+        "value_type": 4,
+        "is_custom_allowed": true,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": []
+    },
+    {
+        "name": "make",
+        "l11n": {
+            "en": "Make",
+            "de": "Marke"
+        },
+        "value_type": 2,
+        "is_custom_allowed": true,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": []
+    },
+    {
+        "name": "model",
+        "l11n": {
+            "en": "Model",
+            "de": "Modell"
+        },
+        "value_type": 2,
+        "is_custom_allowed": true,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": []
+    },
+    {
+        "name": "build",
+        "l11n": {
+            "en": "Build year",
+            "de": "Baujahr"
+        },
+        "value_type": 4,
+        "is_custom_allowed": true,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": []
+    },
+    {
+        "name": "ownership_start",
+        "l11n": {
+            "en": "Ownership start",
+            "de": "Besitzbeginn"
+        },
+        "value_type": 4,
+        "is_custom_allowed": true,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": []
+    },
+    {
+        "name": "ownership_end",
+        "l11n": {
+            "en": "Ownership end",
+            "de": "Besitzende"
+        },
+        "value_type": 4,
+        "is_custom_allowed": true,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": []
+    },
+    {
+        "name": "purchase_price",
+        "l11n": {
+            "en": "Purchase price",
+            "de": "Kaufpreis"
+        },
+        "value_type": 1,
+        "is_custom_allowed": true,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": []
+    },
+    {
+        "name": "leasing_residual_value",
+        "l11n": {
+            "en": "Leasing residual value",
+            "de": "Leasing Restwert"
+        },
+        "value_type": 1,
+        "is_custom_allowed": true,
+        "validation_pattern": "",
+        "is_required": false,
+        "default_value": "",
+        "values": []
+    }
+]
