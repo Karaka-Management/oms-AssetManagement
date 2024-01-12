@@ -175,12 +175,10 @@ final class BackendController extends Controller
         $view->data['units'] = $units;
 
         /** @var \Model\Setting $settings */
-        $settings = $this->app->appSettings->get(null, [
-            SettingsEnum::DEFAULT_LOCALIZATION,
-        ]);
+        $settings = $this->app->appSettings->get(null, SettingsEnum::DEFAULT_LOCALIZATION);
 
         $view->data['attributeView']                              = new \Modules\Attribute\Theme\Backend\Components\AttributeView($this->app->l11nManager, $request, $response);
-        $view->data['attributeView']->data['defaultlocalization'] = LocalizationMapper::get()->where('id', (int) $settings->id)->execute();
+        $view->data['attributeView']->data['default_localization'] = LocalizationMapper::get()->where('id', (int) $settings->id)->execute();
 
         $view->data['media-upload']    = new \Modules\Media\Theme\Backend\Components\Upload\BaseView($this->app->l11nManager, $request, $response);
         $view->data['asset-notes'] = new \Modules\Editor\Theme\Backend\Components\Compound\BaseView($this->app->l11nManager, $request, $response);

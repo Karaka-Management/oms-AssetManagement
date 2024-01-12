@@ -59,6 +59,7 @@ final class AssetAttributeValueMapper extends DataMapperFactory
             'mapper'   => AssetAttributeValueL11nMapper::class,
             'table'    => 'assetmgmt_attr_value_l11n',
             'self'     => 'assetmgmt_attr_value_l11n_value',
+            'column'   => 'content',
             'external' => null,
         ],
     ];

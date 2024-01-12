@@ -16,7 +16,6 @@ return ['AssetManagement' => [
     'Assets' => 'Assets',
     'Status' => 'Status',
     'Name' => 'Name',
-    'Number' => 'Number',
     'Type' => 'Type',
     ':status1'      => 'Active',
     ':status2'      => 'Inactive',
