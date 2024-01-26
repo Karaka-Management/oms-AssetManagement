@@ -17,18 +17,16 @@ use Modules\AssetManagement\Models\NullAsset;
 use Modules\Media\Models\NullMedia;
 use phpOMS\Uri\UriFactory;
 
-$countryCodes    = \phpOMS\Localization\ISO3166TwoEnum::getConstants();
-$countries       = \phpOMS\Localization\ISO3166NameEnum::getConstants();
-$assetStatus = AssetStatus::getConstants();
+$countryCodes = \phpOMS\Localization\ISO3166TwoEnum::getConstants();
+$countries    = \phpOMS\Localization\ISO3166NameEnum::getConstants();
+$assetStatus  = AssetStatus::getConstants();
 
 /**
  * @var \Modules\AssetManagement\Models\Asset $asset
  */
-$asset       = $this->data['asset'] ?? new NullAsset();
-$files           = $asset->files;
-$assetImage  = $this->data['assetImage'] ?? new NullMedia();
-$assetTypes  = $this->data['types'] ?? [];
-$attributeView   = $this->data['attributeView'];
+$asset      = $this->data['asset'] ?? new NullAsset();
+$assetImage = $this->data['assetImage'] ?? new NullMedia();
+$assetTypes = $this->data['types'] ?? [];
 
 /**
  * @var \phpOMS\Views\View $this
@@ -142,7 +140,7 @@ echo $this->data['nav']->render();
         <input type="radio" id="c-tab-2" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-2' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
-                <?= $attributeView->render(
+                <?= $this->data['attributeView']->render(
                     $asset->attributes,
                     $this->data['attributeTypes'] ?? [],
                     $this->data['units'] ?? [],

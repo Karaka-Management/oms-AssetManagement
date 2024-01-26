@@ -14,8 +14,8 @@ declare(strict_types=1);
 
 namespace Modules\AssetManagement\Models;
 
-use Modules\Editor\Models\EditorDocMapper;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeMapper;
+use Modules\Editor\Models\EditorDocMapper;
 use Modules\Media\Models\MediaMapper;
 use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
 
@@ -39,15 +39,15 @@ final class AssetMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'assetmgmt_asset_id'                      => ['name' => 'assetmgmt_asset_id',         'type' => 'int',      'internal' => 'id'],
-        'assetmgmt_asset_name'                    => ['name' => 'assetmgmt_asset_name',      'type' => 'string',   'internal' => 'name'],
-        'assetmgmt_asset_number'                    => ['name' => 'assetmgmt_asset_number',      'type' => 'string',   'internal' => 'number'],
-        'assetmgmt_asset_status'                  => ['name' => 'assetmgmt_asset_status',      'type' => 'int',   'internal' => 'status'],
-        'assetmgmt_asset_info'                    => ['name' => 'assetmgmt_asset_info',      'type' => 'string',   'internal' => 'info'],
-        'assetmgmt_asset_unit'                    => ['name' => 'assetmgmt_asset_unit',      'type' => 'int',   'internal' => 'unit'],
-        'assetmgmt_asset_type'                    => ['name' => 'assetmgmt_asset_type',      'type' => 'int',   'internal' => 'type'],
-        'assetmgmt_asset_responsible'             => ['name' => 'assetmgmt_asset_responsible',      'type' => 'int',   'internal' => 'responsible'],
-        'assetmgmt_asset_created_at'              => ['name' => 'assetmgmt_asset_created_at', 'type' => 'DateTimeImmutable', 'internal' => 'createdAt', 'readonly' => true],
+        'assetmgmt_asset_id'          => ['name' => 'assetmgmt_asset_id',         'type' => 'int',      'internal' => 'id'],
+        'assetmgmt_asset_name'        => ['name' => 'assetmgmt_asset_name',      'type' => 'string',   'internal' => 'name'],
+        'assetmgmt_asset_number'      => ['name' => 'assetmgmt_asset_number',      'type' => 'string',   'internal' => 'number'],
+        'assetmgmt_asset_status'      => ['name' => 'assetmgmt_asset_status',      'type' => 'int',   'internal' => 'status'],
+        'assetmgmt_asset_info'        => ['name' => 'assetmgmt_asset_info',      'type' => 'string',   'internal' => 'info'],
+        'assetmgmt_asset_unit'        => ['name' => 'assetmgmt_asset_unit',      'type' => 'int',   'internal' => 'unit'],
+        'assetmgmt_asset_type'        => ['name' => 'assetmgmt_asset_type',      'type' => 'int',   'internal' => 'type'],
+        'assetmgmt_asset_responsible' => ['name' => 'assetmgmt_asset_responsible',      'type' => 'int',   'internal' => 'responsible'],
+        'assetmgmt_asset_created_at'  => ['name' => 'assetmgmt_asset_created_at', 'type' => 'DateTimeImmutable', 'internal' => 'createdAt', 'readonly' => true],
     ];
 
     /**
@@ -57,7 +57,7 @@ final class AssetMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const HAS_MANY = [
-        'files'        => [
+        'files' => [
             'mapper'   => MediaMapper::class,
             'table'    => 'assetmgmt_asset_media',
             'external' => 'assetmgmt_asset_media_media',
@@ -85,8 +85,8 @@ final class AssetMapper extends DataMapperFactory
      */
     public const OWNS_ONE = [
         'type' => [
-            'mapper'     => AssetTypeMapper::class,
-            'external'   => 'assetmgmt_asset_type',
+            'mapper'   => AssetTypeMapper::class,
+            'external' => 'assetmgmt_asset_type',
         ],
     ];
 

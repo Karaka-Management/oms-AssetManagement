@@ -6,7 +6,7 @@ use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
 return [
-    '^.*/accounting/attribute/type/list.*$' => [
+    '^.*/accounting/attribute/type/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\EquipmentManagement\Controller\BackendController:viewEquipmentManagementAttributeTypeList',
             'verb'       => RouteVerb::GET,
@@ -17,7 +17,7 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/attribute/type\?.*$' => [
+    '^.*/accounting/attribute/type(\?.*$|$)' => [
         [
             'dest'       => '\Modules\EquipmentManagement\Controller\BackendController:viewEquipmentManagementAttributeType',
             'verb'       => RouteVerb::GET,
@@ -29,7 +29,7 @@ return [
         ],
     ],
 
-    '^.*/accounting/asset/list.*$' => [
+    '^.*/accounting/asset/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementList',
             'verb'       => RouteVerb::GET,
@@ -40,9 +40,9 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/asset/profile.*$' => [
+    '^.*/accounting/asset/view(\?.*$|$)' => [
         [
-            'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementProfile',
+            'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementView',
             'verb'       => RouteVerb::GET,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
@@ -51,7 +51,7 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/asset/entry/list.*$' => [
+    '^.*/accounting/asset/entry/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementEntryList',
             'verb'       => RouteVerb::GET,
@@ -62,7 +62,7 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/asset/entry/view.*$' => [
+    '^.*/accounting/asset/entry/view(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementEntryView',
             'verb'       => RouteVerb::GET,
@@ -73,7 +73,7 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/asset/create.*$' => [
+    '^.*/accounting/asset/create(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementCreate',
             'verb'       => RouteVerb::GET,
@@ -84,7 +84,7 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/asset/table.*$' => [
+    '^.*/accounting/asset/table(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementAssetTable',
             'verb'       => RouteVerb::GET,
@@ -94,5 +94,5 @@ return [
                 'state'  => PermissionCategory::ASSET,
             ],
         ],
-    ]
+    ],
 ];

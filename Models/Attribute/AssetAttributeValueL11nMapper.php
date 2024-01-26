@@ -37,10 +37,10 @@ final class AssetAttributeValueL11nMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'assetmgmt_attr_value_l11n_id'     => ['name' => 'assetmgmt_attr_value_l11n_id',    'type' => 'int',    'internal' => 'id'],
-        'assetmgmt_attr_value_l11n_title'  => ['name' => 'assetmgmt_attr_value_l11n_title', 'type' => 'string', 'internal' => 'content', 'autocomplete' => true],
-        'assetmgmt_attr_value_l11n_value'  => ['name' => 'assetmgmt_attr_value_l11n_value',  'type' => 'int',    'internal' => 'ref'],
-        'assetmgmt_attr_value_l11n_lang'   => ['name' => 'assetmgmt_attr_value_l11n_lang',  'type' => 'string', 'internal' => 'language'],
+        'assetmgmt_attr_value_l11n_id'    => ['name' => 'assetmgmt_attr_value_l11n_id',    'type' => 'int',    'internal' => 'id'],
+        'assetmgmt_attr_value_l11n_title' => ['name' => 'assetmgmt_attr_value_l11n_title', 'type' => 'string', 'internal' => 'content', 'autocomplete' => true],
+        'assetmgmt_attr_value_l11n_value' => ['name' => 'assetmgmt_attr_value_l11n_value',  'type' => 'int',    'internal' => 'ref'],
+        'assetmgmt_attr_value_l11n_lang'  => ['name' => 'assetmgmt_attr_value_l11n_lang',  'type' => 'string', 'internal' => 'language'],
     ];
 
     /**

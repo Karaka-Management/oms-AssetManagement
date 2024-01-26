@@ -35,10 +35,10 @@ final class AssetTypeMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'assetmgmt_asset_type_id'         => ['name' => 'assetmgmt_asset_type_id',       'type' => 'int',    'internal' => 'id'],
-        'assetmgmt_asset_type_name'       => ['name' => 'assetmgmt_asset_type_name',     'type' => 'string', 'internal' => 'title', 'autocomplete' => true],
-        'assetmgmt_asset_type_depreciation_duration'       => ['name' => 'assetmgmt_asset_type_depreciation_duration',     'type' => 'int', 'internal' => 'depreciationDuration'],
-        'assetmgmt_asset_type_industry'       => ['name' => 'assetmgmt_asset_type_industry',     'type' => 'int', 'internal' => 'industry'],
+        'assetmgmt_asset_type_id'                    => ['name' => 'assetmgmt_asset_type_id',       'type' => 'int',    'internal' => 'id'],
+        'assetmgmt_asset_type_name'                  => ['name' => 'assetmgmt_asset_type_name',     'type' => 'string', 'internal' => 'title', 'autocomplete' => true],
+        'assetmgmt_asset_type_depreciation_duration' => ['name' => 'assetmgmt_asset_type_depreciation_duration',     'type' => 'int', 'internal' => 'depreciationDuration'],
+        'assetmgmt_asset_type_industry'              => ['name' => 'assetmgmt_asset_type_industry',     'type' => 'int', 'internal' => 'industry'],
 
     ];
 

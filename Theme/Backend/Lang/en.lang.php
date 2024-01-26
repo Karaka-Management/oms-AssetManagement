@@ -13,12 +13,12 @@
 declare(strict_types=1);
 
 return ['AssetManagement' => [
-    'Assets' => 'Assets',
-    'Status' => 'Status',
-    'Name' => 'Name',
-    'Type' => 'Type',
-    ':status1'      => 'Active',
-    ':status2'      => 'Inactive',
-    ':status3'      => 'Damaged',
-    ':status4'      => 'Out of order',
+    'Assets'   => 'Assets',
+    'Status'   => 'Status',
+    'Name'     => 'Name',
+    'Type'     => 'Type',
+    ':status1' => 'Active',
+    ':status2' => 'Inactive',
+    ':status3' => 'Damaged',
+    ':status4' => 'Out of order',
 ]];

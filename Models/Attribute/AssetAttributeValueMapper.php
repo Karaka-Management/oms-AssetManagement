@@ -37,15 +37,15 @@ final class AssetAttributeValueMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'assetmgmt_attr_value_id'                => ['name' => 'assetmgmt_attr_value_id',       'type' => 'int',      'internal' => 'id'],
-        'assetmgmt_attr_value_default'           => ['name' => 'assetmgmt_attr_value_default',  'type' => 'bool',     'internal' => 'isDefault'],
-        'assetmgmt_attr_value_valueStr'          => ['name' => 'assetmgmt_attr_value_valueStr', 'type' => 'string',   'internal' => 'valueStr'],
-        'assetmgmt_attr_value_valueInt'          => ['name' => 'assetmgmt_attr_value_valueInt', 'type' => 'int',      'internal' => 'valueInt'],
-        'assetmgmt_attr_value_valueDec'          => ['name' => 'assetmgmt_attr_value_valueDec', 'type' => 'float',    'internal' => 'valueDec'],
-        'assetmgmt_attr_value_valueDat'          => ['name' => 'assetmgmt_attr_value_valueDat', 'type' => 'DateTime', 'internal' => 'valueDat'],
-        'assetmgmt_attr_value_unit'              => ['name' => 'assetmgmt_attr_value_unit', 'type' => 'string', 'internal' => 'unit'],
-        'assetmgmt_attr_value_deptype'           => ['name' => 'assetmgmt_attr_value_deptype', 'type' => 'int', 'internal' => 'dependingAttributeType'],
-        'assetmgmt_attr_value_depvalue'          => ['name' => 'assetmgmt_attr_value_depvalue', 'type' => 'int', 'internal' => 'dependingAttributeValue'],
+        'assetmgmt_attr_value_id'       => ['name' => 'assetmgmt_attr_value_id',       'type' => 'int',      'internal' => 'id'],
+        'assetmgmt_attr_value_default'  => ['name' => 'assetmgmt_attr_value_default',  'type' => 'bool',     'internal' => 'isDefault'],
+        'assetmgmt_attr_value_valueStr' => ['name' => 'assetmgmt_attr_value_valueStr', 'type' => 'string',   'internal' => 'valueStr'],
+        'assetmgmt_attr_value_valueInt' => ['name' => 'assetmgmt_attr_value_valueInt', 'type' => 'int',      'internal' => 'valueInt'],
+        'assetmgmt_attr_value_valueDec' => ['name' => 'assetmgmt_attr_value_valueDec', 'type' => 'float',    'internal' => 'valueDec'],
+        'assetmgmt_attr_value_valueDat' => ['name' => 'assetmgmt_attr_value_valueDat', 'type' => 'DateTime', 'internal' => 'valueDat'],
+        'assetmgmt_attr_value_unit'     => ['name' => 'assetmgmt_attr_value_unit', 'type' => 'string', 'internal' => 'unit'],
+        'assetmgmt_attr_value_deptype'  => ['name' => 'assetmgmt_attr_value_deptype', 'type' => 'int', 'internal' => 'dependingAttributeType'],
+        'assetmgmt_attr_value_depvalue' => ['name' => 'assetmgmt_attr_value_depvalue', 'type' => 'int', 'internal' => 'dependingAttributeValue'],
     ];
 
     /**

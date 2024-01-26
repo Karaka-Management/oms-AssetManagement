@@ -92,7 +92,7 @@ final class ApiAssetController extends Controller
         $asset->name   = $request->getDataString('name') ?? '';
         $asset->info   = $request->getDataString('info') ?? '';
         $asset->type   = new NullBaseStringL11nType((int) ($request->getDataInt('type') ?? 0));
-        $asset->status = $request->getDataInt('status') ?? AssetStatus::INACTIVE;
+        $asset->status = AssetStatus::tryFromValue($request->getDataInt('status')) ?? AssetStatus::INACTIVE;
         $asset->unit   = $request->getDataInt('unit') ?? $this->app->unitId;
 
         return $asset;
@@ -101,8 +101,8 @@ final class ApiAssetController extends Controller
     /**
      * Create media files for asset
      *
-     * @param Asset       $asset Asset
-     * @param RequestAbstract $request   Request incl. media do upload
+     * @param Asset           $asset   Asset
+     * @param RequestAbstract $request Request incl. media do upload
      *
      * @return void
      *
@@ -256,7 +256,7 @@ final class ApiAssetController extends Controller
 
         /** @var \Modules\AssetManagement\Models\Asset $asset */
         $asset = AssetMapper::get()->where('id', (int) $request->getData('asset'))->execute();
-        $path      = $this->createAssetDir($asset);
+        $path  = $this->createAssetDir($asset);
 
         $uploaded = [];
         if (!empty($uploadedFiles = $request->files)) {
@@ -487,7 +487,7 @@ final class ApiAssetController extends Controller
      * Method to update Asset from request.
      *
      * @param RequestAbstract $request Request
-     * @param Asset       $new     Model to modify
+     * @param Asset           $new     Model to modify
      *
      * @return Asset
      *
@@ -500,7 +500,7 @@ final class ApiAssetController extends Controller
         $new->name   = $request->getDataString('name') ?? $new->name;
         $new->info   = $request->getDataString('info') ?? $new->info;
         $new->type   = $request->hasData('type') ? new NullBaseStringL11nType((int) ($request->getDataInt('type') ?? 0)) : $new->type;
-        $new->status = $request->getDataInt('status') ?? $new->status;
+        $new->status = AssetStatus::tryFromValue($request->getDataInt('status')) ?? $new->status;
         $new->unit   = $request->getDataInt('unit') ?? $this->app->unitId;
 
         return $new;

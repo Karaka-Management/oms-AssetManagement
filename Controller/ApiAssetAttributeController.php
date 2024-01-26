@@ -14,14 +14,14 @@ declare(strict_types=1);
 
 namespace Modules\AssetManagement\Controller;
 
-use Modules\Attribute\Models\Attribute;
-use Modules\Attribute\Models\AttributeType;
-use Modules\Attribute\Models\AttributeValue;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeMapper;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeTypeL11nMapper;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeTypeMapper;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeValueL11nMapper;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeValueMapper;
+use Modules\Attribute\Models\Attribute;
+use Modules\Attribute\Models\AttributeType;
+use Modules\Attribute\Models\AttributeValue;
 use phpOMS\Localization\BaseStringL11n;
 use phpOMS\Message\Http\RequestStatusCode;
 use phpOMS\Message\RequestAbstract;
@@ -61,12 +61,15 @@ final class ApiAssetAttributeController extends Controller
             return;
         }
 
-        $type = AssetAttributeTypeMapper::get()->with('defaults')->where('id', (int) $request->getData('type'))->execute();
+        $type = AssetAttributeTypeMapper::get()
+            ->with('defaults')
+            ->where('id', (int) $request->getData('type'))
+            ->execute();
 
         if (!$type->repeatable) {
             $attr = AssetAttributeMapper::count()
                 ->with('type')
-                ->where('type/id', (int) $request->getData('type'))
+                ->where('type/id', $type->id)
                 ->where('ref', (int) $request->getData('ref'))
                 ->execute();
 
@@ -164,13 +167,20 @@ final class ApiAssetAttributeController extends Controller
             ->where('id', $request->getDataInt('type') ?? 0)
             ->execute();
 
+        if ($type->isInternal) {
+            $response->header->status = RequestStatusCode::R_403;
+            $this->createInvalidCreateResponse($request, $response, $val);
+
+            return;
+        }
+
         $attrValue = $this->createAttributeValueFromRequest($request, $type);
         $this->createModel($request->header->account, $attrValue, AssetAttributeValueMapper::class, 'attr_value', $request->getOrigin());
 
         if ($attrValue->isDefault) {
             $this->createModelRelation(
                 $request->header->account,
-                (int) $request->getData('type'),
+                $type->id,
                 $attrValue->id,
                 AssetAttributeTypeMapper::class, 'defaults', '', $request->getOrigin()
             );

@@ -15,5 +15,5 @@ declare(strict_types=1);
 return ['Navigation' => [
     'Assets'    => 'Assets',
     'Dashboard' => 'Dashboard',
-    'Table' => 'Table',
+    'Table'     => 'Table',
 ]];

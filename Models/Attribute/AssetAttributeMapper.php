@@ -37,10 +37,10 @@ final class AssetAttributeMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'assetmgmt_asset_attr_id'         => ['name' => 'assetmgmt_asset_attr_id',    'type' => 'int', 'internal' => 'id'],
-        'assetmgmt_asset_attr_asset'  => ['name' => 'assetmgmt_asset_attr_asset',  'type' => 'int', 'internal' => 'ref'],
-        'assetmgmt_asset_attr_type'       => ['name' => 'assetmgmt_asset_attr_type',  'type' => 'int', 'internal' => 'type'],
-        'assetmgmt_asset_attr_value'      => ['name' => 'assetmgmt_asset_attr_value', 'type' => 'int', 'internal' => 'value'],
+        'assetmgmt_asset_attr_id'    => ['name' => 'assetmgmt_asset_attr_id',    'type' => 'int', 'internal' => 'id'],
+        'assetmgmt_asset_attr_asset' => ['name' => 'assetmgmt_asset_attr_asset',  'type' => 'int', 'internal' => 'ref'],
+        'assetmgmt_asset_attr_type'  => ['name' => 'assetmgmt_asset_attr_type',  'type' => 'int', 'internal' => 'type'],
+        'assetmgmt_asset_attr_value' => ['name' => 'assetmgmt_asset_attr_value', 'type' => 'int', 'internal' => 'value'],
     ];
 
     /**

@@ -74,9 +74,12 @@ final class ApiAssetTypeController extends Controller
     private function createAssetTypeFromRequest(RequestAbstract $request) : AssetType
     {
         $assetType = new AssetType();
-        $assetType->setL11n($request->getDataString('title') ?? '', $request->getDataString('language') ?? ISO639x1Enum::_EN);
+        $assetType->setL11n(
+            $request->getDataString('title') ?? '',
+            ISO639x1Enum::tryFromValue($request->getDataString('language')) ?? ISO639x1Enum::_EN
+        );
         $assetType->depreciationDuration = $request->getDataInt('duration') ?? 0;
-        $assetType->industry = $request->getDataInt('industry') ?? 0;
+        $assetType->industry             = $request->getDataInt('industry') ?? 0;
 
         return $assetType;
     }
@@ -139,12 +142,10 @@ final class ApiAssetTypeController extends Controller
      */
     private function createAssetTypeL11nFromRequest(RequestAbstract $request) : BaseStringL11n
     {
-        $assetTypeL11n      = new BaseStringL11n();
-        $assetTypeL11n->ref = $request->getDataInt('type') ?? 0;
-        $assetTypeL11n->setLanguage(
-            $request->getDataString('language') ?? $request->header->l11n->language
-        );
-        $assetTypeL11n->content = $request->getDataString('title') ?? '';
+        $assetTypeL11n           = new BaseStringL11n();
+        $assetTypeL11n->ref      = $request->getDataInt('type') ?? 0;
+        $assetTypeL11n->language = ISO639x1Enum::tryFromValue($request->getDataString('language')) ?? $request->header->l11n->language;
+        $assetTypeL11n->content  = $request->getDataString('title') ?? '';
 
         return $assetTypeL11n;
     }
@@ -329,10 +330,8 @@ final class ApiAssetTypeController extends Controller
      */
     public function updateAssetTypeL11nFromRequest(RequestAbstract $request, BaseStringL11n $new) : BaseStringL11n
     {
-        $new->setLanguage(
-            $request->getDataString('language') ?? $new->language
-        );
-        $new->content = $request->getDataString('title') ?? $new->content;
+        $new->language = ISO639x1Enum::tryFromValue($request->getDataString('language')) ?? $new->language;
+        $new->content  = $request->getDataString('title') ?? $new->content;
 
         return $new;
     }

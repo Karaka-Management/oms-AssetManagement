@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Modules\AssetManagement\Controller;
 
-use Modules\Admin\Models\LocalizationMapper;
-use Modules\Admin\Models\SettingsEnum;
 use Modules\AssetManagement\Models\AssetMapper;
 use Modules\AssetManagement\Models\AssetTypeMapper;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeTypeL11nMapper;
@@ -84,7 +82,7 @@ final class BackendController extends Controller
     public function viewAssetManagementAttributeType(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
-        $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-profile');
+        $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-view');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1006601001, $request, $response);
 
         /** @var \Modules\Attribute\Models\AttributeType $attribute */
@@ -116,19 +114,19 @@ final class BackendController extends Controller
      * @since 1.0.0
      * @codeCoverageIgnore
      */
-    public function viewAssetManagementAssetProfile(RequestAbstract $request, ResponseAbstract $response, array $data = []) : RenderableInterface
+    public function viewAssetManagementAssetView(RequestAbstract $request, ResponseAbstract $response, array $data = []) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
 
-        $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-profile');
+        $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-view');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1008402001, $request, $response);
 
-        // @todo This langauge filtering doesn't work. But it was working with the old mappers. Maybe there is a bug in the where() definition. Need to inspect the actual query.
         $asset = AssetMapper::get()
             ->with('attributes')
             ->with('attributes/type')
             ->with('attributes/value')
             ->with('attributes/type/l11n')
+            //->with('attributes/value/l11n')
             ->with('files')
             ->with('files/types')
             ->with('type')
@@ -136,6 +134,7 @@ final class BackendController extends Controller
             ->where('id', (int) $request->getData('id'))
             ->where('type/l11n/language', $response->header->l11n->language)
             ->where('attributes/type/l11n/language', $response->header->l11n->language)
+            //->where('attributes/value/l11n/language', $response->header->l11n->language)
             ->execute();
 
         $view->data['asset'] = $asset;
@@ -174,14 +173,11 @@ final class BackendController extends Controller
 
         $view->data['units'] = $units;
 
-        /** @var \Model\Setting $settings */
-        $settings = $this->app->appSettings->get(null, SettingsEnum::DEFAULT_LOCALIZATION);
+        $view->data['attributeView']                               = new \Modules\Attribute\Theme\Backend\Components\AttributeView($this->app->l11nManager, $request, $response);
+        $view->data['attributeView']->data['default_localization'] = $this->app->l11nServer;
 
-        $view->data['attributeView']                              = new \Modules\Attribute\Theme\Backend\Components\AttributeView($this->app->l11nManager, $request, $response);
-        $view->data['attributeView']->data['default_localization'] = LocalizationMapper::get()->where('id', (int) $settings->id)->execute();
-
-        $view->data['media-upload']    = new \Modules\Media\Theme\Backend\Components\Upload\BaseView($this->app->l11nManager, $request, $response);
-        $view->data['asset-notes'] = new \Modules\Editor\Theme\Backend\Components\Compound\BaseView($this->app->l11nManager, $request, $response);
+        $view->data['media-upload'] = new \Modules\Media\Theme\Backend\Components\Upload\BaseView($this->app->l11nManager, $request, $response);
+        $view->data['asset-notes']  = new \Modules\Editor\Theme\Backend\Components\Compound\BaseView($this->app->l11nManager, $request, $response);
 
         return $view;
     }
