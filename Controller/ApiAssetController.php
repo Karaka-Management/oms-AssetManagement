@@ -112,8 +112,10 @@ final class ApiAssetController extends Controller
     {
         $path = $this->createAssetDir($asset);
 
+        $collection = null;
+
         if (!empty($uploadedFiles = $request->files)) {
-            $uploaded = $this->app->moduleManager->get('Media')->uploadFiles(
+            $uploaded = $this->app->moduleManager->get('Media', 'Api')->uploadFiles(
                 names: [],
                 fileNames: [],
                 files: $uploadedFiles,
@@ -123,7 +125,6 @@ final class ApiAssetController extends Controller
                 pathSettings: PathSettings::FILE_PATH
             );
 
-            $collection = null;
             foreach ($uploaded as $media) {
                 $this->createModelRelation(
                     $request->header->account,
@@ -160,54 +161,51 @@ final class ApiAssetController extends Controller
             }
         }
 
-        if (!empty($mediaFiles = $request->getDataJson('media'))) {
-            $collection = null;
+        $mediaFiles = $request->getDataJson('media');
+        foreach ($mediaFiles as $file) {
+            /** @var \Modules\Media\Models\Media $media */
+            $media = MediaMapper::get()->where('id', (int) $file)->limit(1)->execute();
 
-            foreach ($mediaFiles as $file) {
-                /** @var \Modules\Media\Models\Media $media */
-                $media = MediaMapper::get()->where('id', (int) $file)->limit(1)->execute();
+            $this->createModelRelation(
+                $request->header->account,
+                $asset->id,
+                $media->id,
+                AssetMapper::class,
+                'files',
+                '',
+                $request->getOrigin()
+            );
 
-                $this->createModelRelation(
-                    $request->header->account,
-                    $asset->id,
-                    $media->id,
-                    AssetMapper::class,
-                    'files',
-                    '',
-                    $request->getOrigin()
-                );
+            $ref            = new Reference();
+            $ref->name      = $media->name;
+            $ref->source    = new NullMedia($media->id);
+            $ref->createdBy = new NullAccount($request->header->account);
+            $ref->setVirtualPath($path);
 
-                $ref            = new Reference();
-                $ref->name      = $media->name;
-                $ref->source    = new NullMedia($media->id);
-                $ref->createdBy = new NullAccount($request->header->account);
-                $ref->setVirtualPath($path);
+            $this->createModel($request->header->account, $ref, ReferenceMapper::class, 'media_reference', $request->getOrigin());
 
-                $this->createModel($request->header->account, $ref, ReferenceMapper::class, 'media_reference', $request->getOrigin());
+            if ($collection === null) {
+                /** @var \Modules\Media\Models\Collection $collection */
+                $collection = MediaMapper::getParentCollection($path)->limit(1)->execute();
 
-                if ($collection === null) {
-                    /** @var \Modules\Media\Models\Collection $collection */
-                    $collection = MediaMapper::getParentCollection($path)->limit(1)->execute();
-
-                    if ($collection->id === 0) {
-                        $collection = $this->app->moduleManager->get('Media')->createRecursiveMediaCollection(
-                            $path,
-                            $request->header->account,
-                            __DIR__ . '/../../../Modules/Media/Files' . $path
-                        );
-                    }
+                if ($collection->id === 0) {
+                    $collection = $this->app->moduleManager->get('Media')->createRecursiveMediaCollection(
+                        $path,
+                        $request->header->account,
+                        __DIR__ . '/../../../Modules/Media/Files' . $path
+                    );
                 }
-
-                $this->createModelRelation(
-                    $request->header->account,
-                    $collection->id,
-                    $ref->id,
-                    CollectionMapper::class,
-                    'sources',
-                    '',
-                    $request->getOrigin()
-                );
             }
+
+            $this->createModelRelation(
+                $request->header->account,
+                $collection->id,
+                $ref->id,
+                CollectionMapper::class,
+                'sources',
+                '',
+                $request->getOrigin()
+            );
         }
     }
 
@@ -260,7 +258,7 @@ final class ApiAssetController extends Controller
 
         $uploaded = [];
         if (!empty($uploadedFiles = $request->files)) {
-            $uploaded = $this->app->moduleManager->get('Media')->uploadFiles(
+            $uploaded = $this->app->moduleManager->get('Media', 'Api')->uploadFiles(
                 names: [],
                 fileNames: [],
                 files: $uploadedFiles,
@@ -321,18 +319,17 @@ final class ApiAssetController extends Controller
             }
         }
 
-        if (!empty($mediaFiles = $request->getDataJson('media'))) {
-            foreach ($mediaFiles as $media) {
-                $this->createModelRelation(
-                    $request->header->account,
-                    $asset->id,
-                    (int) $media,
-                    AssetMapper::class,
-                    'files',
-                    '',
-                    $request->getOrigin()
-                );
-            }
+        $mediaFiles = $request->getDataJson('media');
+        foreach ($mediaFiles as $media) {
+            $this->createModelRelation(
+                $request->header->account,
+                $asset->id,
+                (int) $media,
+                AssetMapper::class,
+                'files',
+                '',
+                $request->getOrigin()
+            );
         }
 
         $this->fillJsonResponse($request, $response, NotificationLevel::OK, 'Media', 'Media added to asset.', [
@@ -561,8 +558,6 @@ final class ApiAssetController extends Controller
      * @param RequestAbstract $request Request
      *
      * @return array<string, bool>
-     *
-     * @todo Implement API validation function
      *
      * @since 1.0.0
      */

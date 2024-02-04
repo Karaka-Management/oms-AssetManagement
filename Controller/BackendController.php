@@ -55,14 +55,12 @@ final class BackendController extends Controller
         $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-list');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1006601001, $request, $response);
 
-        $list = AssetMapper::getAll()
+        $view->data['assets'] = AssetMapper::getAll()
             ->with('type')
             ->with('type/l11n')
             ->where('type/l11n/language', $response->header->l11n->language)
             ->sort('id', 'DESC')
             ->execute();
-
-        $view->data['assets'] = $list;
 
         return $view;
     }
@@ -139,6 +137,8 @@ final class BackendController extends Controller
 
         $view->data['asset'] = $asset;
 
+        // @feature Create a new read mapper function that returns relation models instead of its own model
+        //      https://github.com/Karaka-Management/phpOMS/issues/320
         $query   = new Builder($this->app->dbPool->get());
         $results = $query->selectAs(AssetMapper::HAS_MANY['files']['external'], 'file')
             ->from(AssetMapper::TABLE)
