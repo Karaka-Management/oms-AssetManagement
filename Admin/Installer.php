@@ -84,7 +84,7 @@ final class Installer extends InstallerAbstract
         $assetTypes = [];
 
         /** @var \Modules\AssetManagement\Controller\ApiAssetTypeController $module */
-        $module = $app->moduleManager->getModuleInstance('AssetManagement', 'ApiAssetType');
+        $module = $app->moduleManager->get('AssetManagement', 'ApiAssetType');
 
         /** @var array $type */
         foreach ($types as $type) {
@@ -148,7 +148,7 @@ final class Installer extends InstallerAbstract
         $inspectionTypes = [];
 
         /** @var \Modules\AssetManagement\Controller\ApiInspectionTypeController $module */
-        $module = $app->moduleManager->getModuleInstance('AssetManagement', 'ApiInspectionType');
+        $module = $app->moduleManager->get('AssetManagement', 'ApiInspectionType');
 
         /** @var array $type */
         foreach ($types as $type) {
@@ -209,7 +209,7 @@ final class Installer extends InstallerAbstract
         $itemAttrType = [];
 
         /** @var \Modules\AssetManagement\Controller\ApiAssetAttributeController $module */
-        $module = $app->moduleManager->getModuleInstance('AssetManagement', 'ApiAssetAttribute');
+        $module = $app->moduleManager->get('AssetManagement', 'ApiAssetAttribute');
 
         /** @var array $attribute */
         foreach ($attributes as $attribute) {
@@ -277,7 +277,7 @@ final class Installer extends InstallerAbstract
         $itemAttrValue = [];
 
         /** @var \Modules\AssetManagement\Controller\ApiAssetAttributeController $module */
-        $module = $app->moduleManager->getModuleInstance('AssetManagement', 'ApiAssetAttribute');
+        $module = $app->moduleManager->get('AssetManagement', 'ApiAssetAttribute');
 
         foreach ($attributes as $attribute) {
             $itemAttrValue[$attribute['name']] = [];
