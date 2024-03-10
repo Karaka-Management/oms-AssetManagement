@@ -107,12 +107,12 @@ echo $this->data['nav']->render();
 
                             <div class="form-group">
                                 <label for="iAssetPrice"><?= $this->getHtml('PurchasePrice'); ?></label>
-                                <input type="number" step="0.01" id="iAssetPrice" name="purchase_price" value="<?= $this->printHtml($asset->getAttribute('purchase_price')->value->getValue()); ?>">
+                                <input type="number" step="any" id="iAssetPrice" name="purchase_price" value="<?= $this->printHtml($asset->getAttribute('purchase_price')->value->getValue()); ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="iAssetPrice"><?= $this->getHtml('LeasingFee'); ?></label>
-                                <input type="number" step="0.01" id="iAssetPrice" name="leasing_fee" value="<?= $this->printHtml($asset->getAttribute('leasing_fee')->value->getValue()); ?>">
+                                <input type="number" step="any" id="iAssetPrice" name="leasing_fee" value="<?= $this->printHtml($asset->getAttribute('leasing_fee')->value->getValue()); ?>">
                             </div>
                         </div>
                         <div class="portlet-foot">
