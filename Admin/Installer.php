@@ -133,67 +133,6 @@ final class Installer extends InstallerAbstract
     }
 
     /**
-     * Install inspection type
-     *
-     * @param ApplicationAbstract $app   Application
-     * @param array               $types Attribute definition
-     *
-     * @return array
-     *
-     * @since 1.0.0
-     */
-    private static function createInspectionTypes(ApplicationAbstract $app, array $types) : array
-    {
-        /** @var array<string, array> $inspectionTypes */
-        $inspectionTypes = [];
-
-        /** @var \Modules\AssetManagement\Controller\ApiInspectionTypeController $module */
-        $module = $app->moduleManager->get('AssetManagement', 'ApiInspectionType');
-
-        /** @var array $type */
-        foreach ($types as $type) {
-            $response = new HttpResponse();
-            $request  = new HttpRequest();
-
-            $request->header->account = 1;
-            $request->setData('name', $type['name'] ?? '');
-            $request->setData('title', \reset($type['l11n']));
-            $request->setData('language', \array_keys($type['l11n'])[0] ?? 'en');
-
-            $module->apiInspectionTypeCreate($request, $response);
-
-            $responseData = $response->getData('');
-            if (!\is_array($responseData)) {
-                continue;
-            }
-
-            $inspectionTypes[$type['name']] = \is_array($responseData['response'])
-                ? $responseData['response']
-                : $responseData['response']->toArray();
-
-            $isFirst = true;
-            foreach ($type['l11n'] as $language => $l11n) {
-                if ($isFirst) {
-                    $isFirst = false;
-                    continue;
-                }
-
-                $response = new HttpResponse();
-                $request  = new HttpRequest();
-
-                $request->header->account = 1;
-                $request->setData('title', $l11n);
-                $request->setData('language', $language);
-                $request->setData('type', $inspectionTypes[$type['name']]['id']);
-
-                $module->apiInspectionTypeL11nCreate($request, $response);
-            }
-        }
-
-        return $inspectionTypes;
-    }
-
-    /**
      * Install default attribute types
      *
      * @param ApplicationAbstract $app        Application

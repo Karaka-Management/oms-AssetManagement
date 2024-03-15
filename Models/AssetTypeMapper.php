@@ -24,6 +24,7 @@ use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
  * @link    https://jingga.app
  * @since   1.0.0
  *
+ * @template T of AssetType
  * @extends DataMapperFactory<T>
  */
 final class AssetTypeMapper extends DataMapperFactory
