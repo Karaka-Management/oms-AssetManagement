@@ -40,7 +40,7 @@ use phpOMS\Message\ResponseAbstract;
  * @link    https://jingga.app
  * @since   1.0.0
  */
-final class ApiAssetController extends Controller
+final class ApiController extends Controller
 {
     /**
      * Api method to create a asset
