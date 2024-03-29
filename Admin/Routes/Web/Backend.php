@@ -6,7 +6,7 @@ use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
 return [
-    '^.*/accounting/asset/attribute/type/list(\?.*$|$)' => [
+    '^/accounting/asset/attribute/type/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementAttributeTypeList',
             'verb'       => RouteVerb::GET,
@@ -17,7 +17,7 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/asset/attribute/type/view(\?.*$|$)' => [
+    '^/accounting/asset/attribute/type/view(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementAttributeType',
             'verb'       => RouteVerb::GET,
@@ -29,7 +29,7 @@ return [
         ],
     ],
 
-    '^.*/accounting/asset/list(\?.*$|$)' => [
+    '^/accounting/asset/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementList',
             'verb'       => RouteVerb::GET,
@@ -40,7 +40,7 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/asset/view(\?.*$|$)' => [
+    '^/accounting/asset/view(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementView',
             'verb'       => RouteVerb::GET,
@@ -51,7 +51,7 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/asset/entry/list(\?.*$|$)' => [
+    '^/accounting/asset/entry/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementEntryList',
             'verb'       => RouteVerb::GET,
@@ -62,7 +62,7 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/asset/entry/view(\?.*$|$)' => [
+    '^/accounting/asset/entry/view(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementEntryView',
             'verb'       => RouteVerb::GET,
@@ -73,7 +73,7 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/asset/create(\?.*$|$)' => [
+    '^/accounting/asset/create(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementCreate',
             'verb'       => RouteVerb::GET,
@@ -84,7 +84,7 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/asset/table(\?.*$|$)' => [
+    '^/accounting/asset/table(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementAssetTable',
             'verb'       => RouteVerb::GET,
