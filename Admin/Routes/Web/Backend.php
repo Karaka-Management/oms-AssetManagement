@@ -6,9 +6,9 @@ use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
 return [
-    '^.*/accounting/attribute/type/list(\?.*$|$)' => [
+    '^.*/accounting/asset/attribute/type/list(\?.*$|$)' => [
         [
-            'dest'       => '\Modules\EquipmentManagement\Controller\BackendController:viewEquipmentManagementAttributeTypeList',
+            'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementAttributeTypeList',
             'verb'       => RouteVerb::GET,
             'permission' => [
                 'module' => BackendController::NAME,
@@ -17,9 +17,9 @@ return [
             ],
         ],
     ],
-    '^.*/accounting/attribute/type(\?.*$|$)' => [
+    '^.*/accounting/asset/attribute/type/view(\?.*$|$)' => [
         [
-            'dest'       => '\Modules\EquipmentManagement\Controller\BackendController:viewEquipmentManagementAttributeType',
+            'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementAttributeType',
             'verb'       => RouteVerb::GET,
             'permission' => [
                 'module' => BackendController::NAME,
@@ -79,7 +79,7 @@ return [
             'verb'       => RouteVerb::GET,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
-                'type'   => PermissionType::READ,
+                'type'   => PermissionType::CREATE,
                 'state'  => PermissionCategory::ASSET,
             ],
         ],

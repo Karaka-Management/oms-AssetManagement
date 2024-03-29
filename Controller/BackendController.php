@@ -86,8 +86,11 @@ final class BackendController extends Controller
         /** @var \Modules\Attribute\Models\AttributeType $attribute */
         $attribute = AssetAttributeTypeMapper::get()
             ->with('l11n')
+            ->with('defaults')
+            ->with('defaults/l11n')
             ->where('id', (int) $request->getData('id'))
             ->where('l11n/language', $response->header->l11n->language)
+            ->where('defaults/l11n/language', [$response->header->l11n->language, null])
             ->execute();
 
         $l11ns = AssetAttributeTypeL11nMapper::getAll()
