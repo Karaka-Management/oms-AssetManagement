@@ -60,6 +60,34 @@ final class BackendController extends Controller
             ->with('type/l11n')
             ->where('type/l11n/language', $response->header->l11n->language)
             ->sort('id', 'DESC')
+            ->executeGetArray();
+
+        return $view;
+    }
+
+    /**
+     * Routing end-point for application behavior.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
+    public function viewAssetManagementView(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    {
+        $view = new View($this->app->l11nManager, $request, $response);
+        $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-view');
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1006601001, $request, $response);
+
+        $view->data['asset'] = AssetMapper::get()
+            ->with('type')
+            ->with('type/l11n')
+            ->where('type/l11n/language', $response->header->l11n->language)
+            ->where('id', (int) $request->getData('int'))
             ->execute();
 
         return $view;
@@ -95,7 +123,7 @@ final class BackendController extends Controller
 
         $l11ns = AssetAttributeTypeL11nMapper::getAll()
             ->where('ref', $attribute->id)
-            ->execute();
+            ->executeGetArray();
 
         $view->data['attribute'] = $attribute;
         $view->data['l11ns']     = $l11ns;
@@ -167,12 +195,12 @@ final class BackendController extends Controller
         $assetTypes = AssetTypeMapper::getAll()
             ->with('l11n')
             ->where('l11n/language', $response->header->l11n->language)
-            ->execute();
+            ->executeGetArray();
 
         $view->data['types'] = $assetTypes;
 
         $units = UnitMapper::getAll()
-            ->execute();
+            ->executeGetArray();
 
         $view->data['units'] = $units;
 
