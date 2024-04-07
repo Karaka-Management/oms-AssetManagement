@@ -10,6 +10,7 @@ return [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementAttributeTypeList',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
@@ -21,6 +22,7 @@ return [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementAttributeType',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::NAME,
                 'type'   => PermissionType::READ,
@@ -33,6 +35,7 @@ return [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementList',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
@@ -44,6 +47,7 @@ return [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementView',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
@@ -55,6 +59,7 @@ return [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementEntryList',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
@@ -66,6 +71,7 @@ return [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementEntryView',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
@@ -77,6 +83,7 @@ return [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementCreate',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::CREATE,
@@ -88,6 +95,7 @@ return [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementAssetTable',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,

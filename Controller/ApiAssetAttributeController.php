@@ -40,7 +40,7 @@ final class ApiAssetAttributeController extends Controller
     use \Modules\Attribute\Controller\ApiAttributeTraitController;
 
     /**
-     * Api method to create item attribute
+     * Api method to create Attribute
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response

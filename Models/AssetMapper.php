@@ -20,7 +20,7 @@ use Modules\Media\Models\MediaMapper;
 use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
 
 /**
- * Mapper class.
+ * Asset mapper class.
  *
  * @package Modules\AssetManagement\Models
  * @license OMS License 2.0

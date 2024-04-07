@@ -155,7 +155,7 @@ final class BackendController extends Controller
             ->with('attributes/type')
             ->with('attributes/value')
             ->with('attributes/type/l11n')
-            //->with('attributes/value/l11n')
+            ->with('attributes/value/l11n')
             ->with('files')
             ->with('files/types')
             ->with('type')
@@ -163,7 +163,7 @@ final class BackendController extends Controller
             ->where('id', (int) $request->getData('id'))
             ->where('type/l11n/language', $response->header->l11n->language)
             ->where('attributes/type/l11n/language', $response->header->l11n->language)
-            //->where('attributes/value/l11n/language', $response->header->l11n->language)
+            ->where('attributes/value/l11n/language', [$response->header->l11n->language, null])
             ->execute();
 
         $view->data['asset'] = $asset;

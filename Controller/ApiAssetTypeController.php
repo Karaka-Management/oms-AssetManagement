@@ -36,7 +36,7 @@ use phpOMS\Message\ResponseAbstract;
 final class ApiAssetTypeController extends Controller
 {
     /**
-     * Api method to create item attribute type
+     * Api method to create AssetType
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
@@ -63,7 +63,7 @@ final class ApiAssetTypeController extends Controller
     }
 
     /**
-     * Method to create item attribute from request.
+     * Method to create AssetType from request.
      *
      * @param RequestAbstract $request Request
      *
@@ -85,7 +85,7 @@ final class ApiAssetTypeController extends Controller
     }
 
     /**
-     * Validate item attribute create request
+     * Validate AssetType create request
      *
      * @param RequestAbstract $request Request
      *
@@ -105,7 +105,7 @@ final class ApiAssetTypeController extends Controller
     }
 
     /**
-     * Api method to create item attribute l11n
+     * Api method to create AssetType l11n
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
@@ -132,7 +132,7 @@ final class ApiAssetTypeController extends Controller
     }
 
     /**
-     * Method to create item attribute l11n from request.
+     * Method to create AssetType l11n from request.
      *
      * @param RequestAbstract $request Request
      *
@@ -151,7 +151,7 @@ final class ApiAssetTypeController extends Controller
     }
 
     /**
-     * Validate item attribute l11n create request
+     * Validate AssetType l11n create request
      *
      * @param RequestAbstract $request Request
      *
