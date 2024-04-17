@@ -44,6 +44,8 @@ class Asset implements \JsonSerializable
 
     public \DateTimeImmutable $createdAt;
 
+    public int $equipment = 0;
+
     /**
      * Constructor.
      *

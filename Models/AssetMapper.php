@@ -45,6 +45,7 @@ final class AssetMapper extends DataMapperFactory
         'assetmgmt_asset_status'      => ['name' => 'assetmgmt_asset_status',      'type' => 'int',   'internal' => 'status'],
         'assetmgmt_asset_info'        => ['name' => 'assetmgmt_asset_info',      'type' => 'string',   'internal' => 'info'],
         'assetmgmt_asset_unit'        => ['name' => 'assetmgmt_asset_unit',      'type' => 'int',   'internal' => 'unit'],
+        'assetmgmt_asset_equipment'        => ['name' => 'assetmgmt_asset_equipment',      'type' => 'int',   'internal' => 'equipment'],
         'assetmgmt_asset_type'        => ['name' => 'assetmgmt_asset_type',      'type' => 'int',   'internal' => 'type'],
         'assetmgmt_asset_responsible' => ['name' => 'assetmgmt_asset_responsible',      'type' => 'int',   'internal' => 'responsible'],
         'assetmgmt_asset_created_at'  => ['name' => 'assetmgmt_asset_created_at', 'type' => 'DateTimeImmutable', 'internal' => 'createdAt', 'readonly' => true],

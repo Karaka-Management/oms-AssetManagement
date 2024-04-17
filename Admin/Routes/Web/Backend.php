@@ -55,30 +55,6 @@ return [
             ],
         ],
     ],
-    '^/accounting/asset/entry/list(\?.*$|$)' => [
-        [
-            'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementEntryList',
-            'verb'       => RouteVerb::GET,
-            'active'     => true,
-            'permission' => [
-                'module' => BackendController::MODULE_NAME,
-                'type'   => PermissionType::READ,
-                'state'  => PermissionCategory::ASSET,
-            ],
-        ],
-    ],
-    '^/accounting/asset/entry/view(\?.*$|$)' => [
-        [
-            'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementEntryView',
-            'verb'       => RouteVerb::GET,
-            'active'     => true,
-            'permission' => [
-                'module' => BackendController::MODULE_NAME,
-                'type'   => PermissionType::READ,
-                'state'  => PermissionCategory::ASSET,
-            ],
-        ],
-    ],
     '^/accounting/asset/create(\?.*$|$)' => [
         [
             'dest'       => '\Modules\AssetManagement\Controller\BackendController:viewAssetManagementCreate',

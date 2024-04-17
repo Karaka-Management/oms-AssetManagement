@@ -14,6 +14,10 @@ declare(strict_types=1);
 
 return ['AssetManagement' => [
     'Assets'   => 'Assets',
+    'Asset'     => 'Asset',
+    'Equipment'     => 'Equipment',
+    'CreateEquipment'     => 'Create Equipment',
+    'Number'     => 'Number',
     'Status'   => 'Status',
     'Name'     => 'Name',
     'Type'     => 'Type',

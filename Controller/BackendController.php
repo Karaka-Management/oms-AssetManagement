@@ -18,6 +18,7 @@ use Modules\AssetManagement\Models\AssetMapper;
 use Modules\AssetManagement\Models\AssetTypeMapper;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeTypeL11nMapper;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeTypeMapper;
+use Modules\Attribute\Models\NullAttributeType;
 use Modules\Media\Models\MediaMapper;
 use Modules\Media\Models\MediaTypeMapper;
 use Modules\Organization\Models\UnitMapper;
@@ -105,14 +106,57 @@ final class BackendController extends Controller
      * @since 1.0.0
      * @codeCoverageIgnore
      */
-    public function viewAssetManagementAttributeType(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    public function viewAssetManagementAssetTable(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
-        $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-view');
+        $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-table');
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1006601001, $request, $response);
+
+        return $view;
+    }
+
+    /**
+     * Routing end-point for application behavior.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
+    public function viewAssetManagementCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    {
+        $view = new View($this->app->l11nManager, $request, $response);
+        $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-create');
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1006601001, $request, $response);
+
+        $view->data['hasEquipmentManagement'] = $this->app->moduleManager->isActive('EquipmentManagement');
+
+        return $view;
+    }
+
+    /**
+     * Routing end-point for application behavior.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
+    public function viewAssetManagementAttributeType(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    {
+        $view              = new \Modules\Attribute\Theme\Backend\Components\AttributeTypeView($this->app->l11nManager, $request, $response);
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1006601001, $request, $response);
 
         /** @var \Modules\Attribute\Models\AttributeType $attribute */
-        $attribute = AssetAttributeTypeMapper::get()
+        $view->attribute = AssetAttributeTypeMapper::get()
             ->with('l11n')
             ->with('defaults')
             ->with('defaults/l11n')
@@ -121,12 +165,11 @@ final class BackendController extends Controller
             ->where('defaults/l11n/language', [$response->header->l11n->language, null])
             ->execute();
 
-        $l11ns = AssetAttributeTypeL11nMapper::getAll()
+        $view->l11ns = AssetAttributeTypeL11nMapper::getAll()
             ->where('ref', $attribute->id)
             ->executeGetArray();
 
-        $view->data['attribute'] = $attribute;
-        $view->data['l11ns']     = $l11ns;
+        $view->path = 'accounting/asset';
 
         return $view;
     }
@@ -150,7 +193,7 @@ final class BackendController extends Controller
         $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-view');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1008402001, $request, $response);
 
-        $asset = AssetMapper::get()
+        $view->data['asset'] = AssetMapper::get()
             ->with('attributes')
             ->with('attributes/type')
             ->with('attributes/value')
@@ -166,8 +209,6 @@ final class BackendController extends Controller
             ->where('attributes/value/l11n/language', [$response->header->l11n->language, null])
             ->execute();
 
-        $view->data['asset'] = $asset;
-
         // @feature Create a new read mapper function that returns relation models instead of its own model
         //      https://github.com/Karaka-Management/phpOMS/issues/320
         $query   = new Builder($this->app->dbPool->get());
@@ -181,34 +222,55 @@ final class BackendController extends Controller
                 ->on(MediaMapper::TABLE . '.' . MediaMapper::PRIMARYFIELD, '=', MediaMapper::HAS_MANY['types']['table'] . '.' . MediaMapper::HAS_MANY['types']['self'])
             ->leftJoin(MediaTypeMapper::TABLE)
                 ->on(MediaMapper::HAS_MANY['types']['table'] . '.' . MediaMapper::HAS_MANY['types']['external'], '=', MediaTypeMapper::TABLE . '.' . MediaTypeMapper::PRIMARYFIELD)
-            ->where(AssetMapper::HAS_MANY['files']['self'], '=', $asset->id)
+            ->where(AssetMapper::HAS_MANY['files']['self'], '=', $view->data['asset']->id)
             ->where(MediaTypeMapper::TABLE . '.' . MediaTypeMapper::getColumnByMember('name'), '=', 'asset_profile_image');
 
-        $assetImage = MediaMapper::get()
+        $view->data['assetImage'] = MediaMapper::get()
             ->with('types')
             ->where('id', $results)
             ->limit(1)
             ->execute();
 
-        $view->data['assetImage'] = $assetImage;
-
-        $assetTypes = AssetTypeMapper::getAll()
+        $view->data['types'] = AssetTypeMapper::getAll()
             ->with('l11n')
             ->where('l11n/language', $response->header->l11n->language)
             ->executeGetArray();
 
-        $view->data['types'] = $assetTypes;
-
-        $units = UnitMapper::getAll()
+        $view->data['units'] = UnitMapper::getAll()
             ->executeGetArray();
-
-        $view->data['units'] = $units;
 
         $view->data['attributeView']                               = new \Modules\Attribute\Theme\Backend\Components\AttributeView($this->app->l11nManager, $request, $response);
         $view->data['attributeView']->data['default_localization'] = $this->app->l11nServer;
 
         $view->data['media-upload'] = new \Modules\Media\Theme\Backend\Components\Upload\BaseView($this->app->l11nManager, $request, $response);
         $view->data['asset-notes']  = new \Modules\Editor\Theme\Backend\Components\Compound\BaseView($this->app->l11nManager, $request, $response);
+
+        return $view;
+    }
+
+    /**
+     * Routing end-point for application behavior.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return RenderableInterface Returns a renderable object
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
+    public function viewAssetManagementAttributeTypeList(RequestAbstract $request, ResponseAbstract $response, array $data = []) : RenderableInterface
+    {
+        $view              = new \Modules\Attribute\Theme\Backend\Components\AttributeTypeListView($this->app->l11nManager, $request, $response);
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1006601001, $request, $response);
+
+        $view->attributes = AssetAttributeTypeMapper::getAll()
+            ->with('l11n')
+            ->where('l11n/language', $response->header->l11n->language)
+            ->executeGetArray();
+
+        $view->path = 'accounting/asset';
 
         return $view;
     }

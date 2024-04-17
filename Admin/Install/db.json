@@ -113,6 +113,14 @@
                 "null": true,
                 "foreignTable": "unit",
                 "foreignKey": "unit_id"
+            },
+            "assetmgmt_asset_equipment": {
+                "name": "assetmgmt_asset_equipment",
+                "type": "INT",
+                "default": null,
+                "null": true,
+                "foreignTable": "equipmgmt_equipment",
+                "foreignKey": "equipmgmt_equipment_id"
             }
         }
     },

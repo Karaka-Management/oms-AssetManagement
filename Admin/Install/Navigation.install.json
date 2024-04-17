@@ -42,21 +42,6 @@
                 "permission": { "permission": 2, "type": null, "element": null },
                 "parent": 1006601001,
                 "children": []
-            },
-            {
-                "id": 1006604001,
-                "pid": "/accounting/asset",
-                "type": 3,
-                "subtype": 1,
-                "name": "Entries",
-                "uri": "{/base}/accounting/asset/entry/list",
-                "target": "self",
-                "icon": null,
-                "order": 15,
-                "from": "AssetManagement",
-                "permission": { "permission": 2, "type": null, "element": null },
-                "parent": 1006601001,
-                "children": []
             }
         ]
     }
