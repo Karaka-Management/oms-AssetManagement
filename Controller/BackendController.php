@@ -81,15 +81,61 @@ final class BackendController extends Controller
     public function viewAssetManagementView(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
+
         $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-view');
-        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1006601001, $request, $response);
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1008402001, $request, $response);
 
         $view->data['asset'] = AssetMapper::get()
+            ->with('attributes')
+            ->with('attributes/type')
+            ->with('attributes/value')
+            ->with('attributes/type/l11n')
+            ->with('attributes/value/l11n')
+            ->with('files')
+            ->with('files/types')
             ->with('type')
             ->with('type/l11n')
+            ->where('id', (int) $request->getData('id'))
             ->where('type/l11n/language', $response->header->l11n->language)
-            ->where('id', (int) $request->getData('int'))
+            ->where('attributes/type/l11n/language', $response->header->l11n->language)
+            ->where('attributes/value/l11n/language', [$response->header->l11n->language, null])
             ->execute();
+
+        // @feature Create a new read mapper function that returns relation models instead of its own model
+        //      https://github.com/Karaka-Management/phpOMS/issues/320
+        $query   = new Builder($this->app->dbPool->get());
+        $results = $query->selectAs(AssetMapper::HAS_MANY['files']['external'], 'file')
+            ->from(AssetMapper::TABLE)
+            ->leftJoin(AssetMapper::HAS_MANY['files']['table'])
+                ->on(AssetMapper::HAS_MANY['files']['table'] . '.' . AssetMapper::HAS_MANY['files']['self'], '=', AssetMapper::TABLE . '.' . AssetMapper::PRIMARYFIELD)
+            ->leftJoin(MediaMapper::TABLE)
+                ->on(AssetMapper::HAS_MANY['files']['table'] . '.' . AssetMapper::HAS_MANY['files']['external'], '=', MediaMapper::TABLE . '.' . MediaMapper::PRIMARYFIELD)
+             ->leftJoin(MediaMapper::HAS_MANY['types']['table'])
+                ->on(MediaMapper::TABLE . '.' . MediaMapper::PRIMARYFIELD, '=', MediaMapper::HAS_MANY['types']['table'] . '.' . MediaMapper::HAS_MANY['types']['self'])
+            ->leftJoin(MediaTypeMapper::TABLE)
+                ->on(MediaMapper::HAS_MANY['types']['table'] . '.' . MediaMapper::HAS_MANY['types']['external'], '=', MediaTypeMapper::TABLE . '.' . MediaTypeMapper::PRIMARYFIELD)
+            ->where(AssetMapper::HAS_MANY['files']['self'], '=', $view->data['asset']->id)
+            ->where(MediaTypeMapper::TABLE . '.' . MediaTypeMapper::getColumnByMember('name'), '=', 'asset_profile_image');
+
+        $view->data['assetImage'] = MediaMapper::get()
+            ->with('types')
+            ->where('id', $results)
+            ->limit(1)
+            ->execute();
+
+        $view->data['types'] = AssetTypeMapper::getAll()
+            ->with('l11n')
+            ->where('l11n/language', $response->header->l11n->language)
+            ->executeGetArray();
+
+        $view->data['units'] = UnitMapper::getAll()
+            ->executeGetArray();
+
+        $view->data['attributeView']                               = new \Modules\Attribute\Theme\Backend\Components\AttributeView($this->app->l11nManager, $request, $response);
+        $view->data['attributeView']->data['default_localization'] = $this->app->l11nServer;
+
+        $view->data['media-upload'] = new \Modules\Media\Theme\Backend\Components\Upload\BaseView($this->app->l11nManager, $request, $response);
+        $view->data['asset-notes']  = new \Modules\Editor\Theme\Backend\Components\Compound\BaseView($this->app->l11nManager, $request, $response);
 
         return $view;
     }
@@ -170,80 +216,6 @@ final class BackendController extends Controller
             ->executeGetArray();
 
         $view->path = 'accounting/asset';
-
-        return $view;
-    }
-
-    /**
-     * Routing end-point for application behavior.
-     *
-     * @param RequestAbstract  $request  Request
-     * @param ResponseAbstract $response Response
-     * @param array            $data     Generic data
-     *
-     * @return RenderableInterface Returns a renderable object
-     *
-     * @since 1.0.0
-     * @codeCoverageIgnore
-     */
-    public function viewAssetManagementAssetView(RequestAbstract $request, ResponseAbstract $response, array $data = []) : RenderableInterface
-    {
-        $view = new View($this->app->l11nManager, $request, $response);
-
-        $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-view');
-        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1008402001, $request, $response);
-
-        $view->data['asset'] = AssetMapper::get()
-            ->with('attributes')
-            ->with('attributes/type')
-            ->with('attributes/value')
-            ->with('attributes/type/l11n')
-            ->with('attributes/value/l11n')
-            ->with('files')
-            ->with('files/types')
-            ->with('type')
-            ->with('type/l11n')
-            ->where('id', (int) $request->getData('id'))
-            ->where('type/l11n/language', $response->header->l11n->language)
-            ->where('attributes/type/l11n/language', $response->header->l11n->language)
-            ->where('attributes/value/l11n/language', [$response->header->l11n->language, null])
-            ->execute();
-
-        // @feature Create a new read mapper function that returns relation models instead of its own model
-        //      https://github.com/Karaka-Management/phpOMS/issues/320
-        $query   = new Builder($this->app->dbPool->get());
-        $results = $query->selectAs(AssetMapper::HAS_MANY['files']['external'], 'file')
-            ->from(AssetMapper::TABLE)
-            ->leftJoin(AssetMapper::HAS_MANY['files']['table'])
-                ->on(AssetMapper::HAS_MANY['files']['table'] . '.' . AssetMapper::HAS_MANY['files']['self'], '=', AssetMapper::TABLE . '.' . AssetMapper::PRIMARYFIELD)
-            ->leftJoin(MediaMapper::TABLE)
-                ->on(AssetMapper::HAS_MANY['files']['table'] . '.' . AssetMapper::HAS_MANY['files']['external'], '=', MediaMapper::TABLE . '.' . MediaMapper::PRIMARYFIELD)
-             ->leftJoin(MediaMapper::HAS_MANY['types']['table'])
-                ->on(MediaMapper::TABLE . '.' . MediaMapper::PRIMARYFIELD, '=', MediaMapper::HAS_MANY['types']['table'] . '.' . MediaMapper::HAS_MANY['types']['self'])
-            ->leftJoin(MediaTypeMapper::TABLE)
-                ->on(MediaMapper::HAS_MANY['types']['table'] . '.' . MediaMapper::HAS_MANY['types']['external'], '=', MediaTypeMapper::TABLE . '.' . MediaTypeMapper::PRIMARYFIELD)
-            ->where(AssetMapper::HAS_MANY['files']['self'], '=', $view->data['asset']->id)
-            ->where(MediaTypeMapper::TABLE . '.' . MediaTypeMapper::getColumnByMember('name'), '=', 'asset_profile_image');
-
-        $view->data['assetImage'] = MediaMapper::get()
-            ->with('types')
-            ->where('id', $results)
-            ->limit(1)
-            ->execute();
-
-        $view->data['types'] = AssetTypeMapper::getAll()
-            ->with('l11n')
-            ->where('l11n/language', $response->header->l11n->language)
-            ->executeGetArray();
-
-        $view->data['units'] = UnitMapper::getAll()
-            ->executeGetArray();
-
-        $view->data['attributeView']                               = new \Modules\Attribute\Theme\Backend\Components\AttributeView($this->app->l11nManager, $request, $response);
-        $view->data['attributeView']->data['default_localization'] = $this->app->l11nServer;
-
-        $view->data['media-upload'] = new \Modules\Media\Theme\Backend\Components\Upload\BaseView($this->app->l11nManager, $request, $response);
-        $view->data['asset-notes']  = new \Modules\Editor\Theme\Backend\Components\Compound\BaseView($this->app->l11nManager, $request, $response);
 
         return $view;
     }

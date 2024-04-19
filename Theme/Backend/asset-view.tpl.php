@@ -40,7 +40,6 @@ echo $this->data['nav']->render();
             <li><label for="c-tab-2"><?= $this->getHtml('Attributes'); ?></label>
             <li><label for="c-tab-3"><?= $this->getHtml('Files'); ?></label>
             <li><label for="c-tab-4"><?= $this->getHtml('Notes'); ?></label>
-            <li><label for="c-tab-5"><?= $this->getHtml('Inspections'); ?></label>
             <li><label for="c-tab-8"><?= $this->getHtml('Costs'); ?></label>
         </ul>
     </div>
@@ -144,7 +143,7 @@ echo $this->data['nav']->render();
                     $asset->attributes,
                     $this->data['attributeTypes'] ?? [],
                     $this->data['units'] ?? [],
-                    '{/api}fleet/asset/attribute?csrf={$CSRF}',
+                    '{/api}accounting/asset/attribute?csrf={$CSRF}',
                     $asset->id
                     );
                 ?>
@@ -159,59 +158,6 @@ echo $this->data['nav']->render();
         <input type="radio" id="c-tab-4" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-4' ? ' checked' : ''; ?>>
         <div class="tab">
             <?= $this->data['asset-notes']->render('asset-notes', '', $asset->notes); ?>
-        </div>
-
-        <input type="radio" id="c-tab-5" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-5' ? ' checked' : ''; ?>>
-        <div class="tab">
-            <div class="row">
-                <a class="button" href="<?= UriFactory::build('{/base}/fleet/inspection/create?asset=' . $asset->id); ?>"><?= $this->getHtml('Create', '0', '0'); ?></a>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-md-6">
-                    <section class="portlet">
-                        <div class="portlet-head"><?= $this->getHtml('Upcoming'); ?></div>
-                        <table id="upcomingInspections" class="default sticky">
-                            <thead>
-                                <tr>
-                                    <td><?= $this->getHtml('Date'); ?>
-                                    <td class="wf-100"><?= $this->getHtml('Type'); ?>
-                                    <td><?= $this->getHtml('Responsible'); ?>
-                            <tbody>
-                            <?php foreach ($this->data['inspections'] as $inspection) :
-                                // @todo handle old inspections in the past? maybe use a status?!
-                                if ($inspection->next === null) {
-                                    continue;
-                                }
-                            ?>
-                                <tr>
-                                    <td><?= $inspection->next->format('Y-m-d H:i'); ?>
-                                    <td><?= $this->printHtml($inspection->type->getL11n()); ?>
-                                    <td>
-                            <?php endforeach; ?>
-                        </table>
-                    </section>
-                </div>
-
-                <div class="col-xs-12 col-md-6">
-                    <section class="portlet">
-                        <div class="portlet-head"><?= $this->getHtml('History'); ?></div>
-                        <table id="historicInspections" class="default sticky">
-                            <thead>
-                                <tr>
-                                    <td><?= $this->getHtml('Date'); ?>
-                                    <td class="wf-100"><?= $this->getHtml('Type'); ?>
-                                    <td><?= $this->getHtml('Responsible'); ?>
-                            <tbody>
-                            <?php foreach ($this->data['inspections'] as $inspection) : ?>
-                                <tr>
-                                    <td><?= $inspection->date->format('Y-m-d H:i'); ?>
-                                    <td><?= $this->printHtml($inspection->type->getL11n()); ?>
-                                    <td>
-                            <?php endforeach; ?>
-                        </table>
-                    </section>
-                </div>
-            </div>
         </div>
 
         <input type="radio" id="c-tab-8" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-8' ? ' checked' : ''; ?>>

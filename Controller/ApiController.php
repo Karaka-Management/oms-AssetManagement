@@ -89,6 +89,7 @@ final class ApiController extends Controller
         $asset->type   = new NullBaseStringL11nType((int) ($request->getDataInt('type') ?? 0));
         $asset->status = AssetStatus::tryFromValue($request->getDataInt('status')) ?? AssetStatus::INACTIVE;
         $asset->unit   = $request->getDataInt('unit') ?? $this->app->unitId;
+        $asset->equipment = $request->getDataInt('equipment');
 
         return $asset;
     }
