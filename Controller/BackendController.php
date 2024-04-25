@@ -201,7 +201,6 @@ final class BackendController extends Controller
         $view              = new \Modules\Attribute\Theme\Backend\Components\AttributeTypeView($this->app->l11nManager, $request, $response);
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1006601001, $request, $response);
 
-        /** @var \Modules\Attribute\Models\AttributeType $attribute */
         $view->attribute = AssetAttributeTypeMapper::get()
             ->with('l11n')
             ->with('defaults')
@@ -212,7 +211,7 @@ final class BackendController extends Controller
             ->execute();
 
         $view->l11ns = AssetAttributeTypeL11nMapper::getAll()
-            ->where('ref', $attribute->id)
+            ->where('ref', $view->attribute->id)
             ->executeGetArray();
 
         $view->path = 'accounting/asset';
