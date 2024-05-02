@@ -18,7 +18,6 @@ use Modules\AssetManagement\Models\AssetMapper;
 use Modules\AssetManagement\Models\AssetTypeMapper;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeTypeL11nMapper;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeTypeMapper;
-use Modules\Attribute\Models\NullAttributeType;
 use Modules\Media\Models\MediaMapper;
 use Modules\Media\Models\MediaTypeMapper;
 use Modules\Organization\Models\UnitMapper;
@@ -35,6 +34,9 @@ use phpOMS\Views\View;
  * @license OMS License 2.0
  * @link    https://jingga.app
  * @since   1.0.0
+ *
+ * @todo Create comparison feature for Balance, Asset, P&L, Cash
+ *      https://github.com/Karaka-Management/oms-Accounting/issues/3
  */
 final class BackendController extends Controller
 {
@@ -148,6 +150,9 @@ final class BackendController extends Controller
      * @param array            $data     Generic data
      *
      * @return RenderableInterface
+     *
+     * @todo Create asset/depreciation structure
+     *      https://github.com/Karaka-Management/oms-Accounting/issues/4
      *
      * @since 1.0.0
      * @codeCoverageIgnore
