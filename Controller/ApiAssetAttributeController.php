@@ -66,7 +66,7 @@ final class ApiAssetAttributeController extends Controller
             ->where('id', (int) $request->getData('type'))
             ->execute();
 
-        if (!$type->repeatable) {
+        if (!$type->isRepeatable) {
             $attr = AssetAttributeMapper::count()
                 ->with('type')
                 ->where('type/id', $type->id)

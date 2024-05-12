@@ -42,7 +42,7 @@ final class AssetAttributeTypeMapper extends DataMapperFactory
         'assetmgmt_attr_type_datatype'   => ['name' => 'assetmgmt_attr_type_datatype',   'type' => 'int',    'internal' => 'datatype'],
         'assetmgmt_attr_type_fields'     => ['name' => 'assetmgmt_attr_type_fields',   'type' => 'int',    'internal' => 'fields'],
         'assetmgmt_attr_type_custom'     => ['name' => 'assetmgmt_attr_type_custom',   'type' => 'bool',   'internal' => 'custom'],
-        'assetmgmt_attr_type_repeatable' => ['name' => 'assetmgmt_attr_type_repeatable',   'type' => 'bool',   'internal' => 'repeatable'],
+        'assetmgmt_attr_type_repeatable' => ['name' => 'assetmgmt_attr_type_repeatable',   'type' => 'bool',   'internal' => 'isRepeatable'],
         'assetmgmt_attr_type_internal'   => ['name' => 'assetmgmt_attr_type_internal',   'type' => 'bool',   'internal' => 'isInternal'],
         'assetmgmt_attr_type_pattern'    => ['name' => 'assetmgmt_attr_type_pattern',  'type' => 'string', 'internal' => 'validationPattern'],
         'assetmgmt_attr_type_required'   => ['name' => 'assetmgmt_attr_type_required', 'type' => 'bool',   'internal' => 'isRequired'],

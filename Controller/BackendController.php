@@ -19,8 +19,8 @@ use Modules\AssetManagement\Models\AssetTypeMapper;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeTypeL11nMapper;
 use Modules\AssetManagement\Models\Attribute\AssetAttributeTypeMapper;
 use Modules\Media\Models\MediaMapper;
-use Modules\Media\Models\MediaTypeMapper;
 use Modules\Organization\Models\UnitMapper;
+use Modules\Tag\Models\TagMapper;
 use phpOMS\Contract\RenderableInterface;
 use phpOMS\DataStorage\Database\Query\Builder;
 use phpOMS\Message\RequestAbstract;
@@ -94,7 +94,7 @@ final class BackendController extends Controller
             ->with('attributes/type/l11n')
             ->with('attributes/value/l11n')
             ->with('files')
-            ->with('files/types')
+            ->with('files/tags')
             ->with('type')
             ->with('type/l11n')
             ->where('id', (int) $request->getData('id'))
@@ -112,15 +112,14 @@ final class BackendController extends Controller
                 ->on(AssetMapper::HAS_MANY['files']['table'] . '.' . AssetMapper::HAS_MANY['files']['self'], '=', AssetMapper::TABLE . '.' . AssetMapper::PRIMARYFIELD)
             ->leftJoin(MediaMapper::TABLE)
                 ->on(AssetMapper::HAS_MANY['files']['table'] . '.' . AssetMapper::HAS_MANY['files']['external'], '=', MediaMapper::TABLE . '.' . MediaMapper::PRIMARYFIELD)
-             ->leftJoin(MediaMapper::HAS_MANY['types']['table'])
-                ->on(MediaMapper::TABLE . '.' . MediaMapper::PRIMARYFIELD, '=', MediaMapper::HAS_MANY['types']['table'] . '.' . MediaMapper::HAS_MANY['types']['self'])
-            ->leftJoin(MediaTypeMapper::TABLE)
-                ->on(MediaMapper::HAS_MANY['types']['table'] . '.' . MediaMapper::HAS_MANY['types']['external'], '=', MediaTypeMapper::TABLE . '.' . MediaTypeMapper::PRIMARYFIELD)
+             ->leftJoin(MediaMapper::HAS_MANY['tags']['table'])
+                ->on(MediaMapper::TABLE . '.' . MediaMapper::PRIMARYFIELD, '=', MediaMapper::HAS_MANY['tags']['table'] . '.' . MediaMapper::HAS_MANY['tags']['self'])
+            ->leftJoin(TagMapper::TABLE)
+                ->on(MediaMapper::HAS_MANY['tags']['table'] . '.' . MediaMapper::HAS_MANY['tags']['external'], '=', TagMapper::TABLE . '.' . TagMapper::PRIMARYFIELD)
             ->where(AssetMapper::HAS_MANY['files']['self'], '=', $view->data['asset']->id)
-            ->where(MediaTypeMapper::TABLE . '.' . MediaTypeMapper::getColumnByMember('name'), '=', 'asset_profile_image');
+            ->where(TagMapper::TABLE . '.' . TagMapper::getColumnByMember('name'), '=', 'profile_image');
 
         $view->data['assetImage'] = MediaMapper::get()
-            ->with('types')
             ->where('id', $results)
             ->limit(1)
             ->execute();
