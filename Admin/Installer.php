@@ -219,6 +219,10 @@ final class Installer extends InstallerAbstract
         $module = $app->moduleManager->get('AssetManagement', 'ApiAssetAttribute');
 
         foreach ($attributes as $attribute) {
+            if (!isset($attribute['values'])) {
+                continue;
+            }
+
             $itemAttrValue[$attribute['name']] = [];
 
             /** @var array $value */

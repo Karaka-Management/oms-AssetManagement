@@ -83,12 +83,14 @@ final class ApiController extends Controller
      */
     public function createAssetFromRequest(RequestAbstract $request) : Asset
     {
-        $asset         = new Asset();
-        $asset->name   = $request->getDataString('name') ?? '';
-        $asset->info   = $request->getDataString('info') ?? '';
-        $asset->type   = new NullBaseStringL11nType((int) ($request->getDataInt('type') ?? 0));
-        $asset->status = AssetStatus::tryFromValue($request->getDataInt('status')) ?? AssetStatus::INACTIVE;
-        $asset->unit   = $request->getDataInt('unit') ?? $this->app->unitId;
+        $asset            = new Asset();
+        $asset->name      = $request->getDataString('name') ?? '';
+        $asset->info      = $request->getDataString('info') ?? '';
+        $asset->code      = $request->getDataString('code') ?? '';
+        $asset->location  = $request->getDataString('location') ?? '';
+        $asset->type      = new NullBaseStringL11nType((int) ($request->getDataInt('type') ?? 0));
+        $asset->status    = AssetStatus::tryFromValue($request->getDataInt('status')) ?? AssetStatus::INACTIVE;
+        $asset->unit      = $request->getDataInt('unit') ?? $this->app->unitId;
         $asset->equipment = $request->getDataInt('equipment');
 
         return $asset;

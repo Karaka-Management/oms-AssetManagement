@@ -32,6 +32,10 @@ class Asset implements \JsonSerializable
 
     public int $status = AssetStatus::ACTIVE;
 
+    public string $code = '';
+
+    public string $location = '';
+
     public BaseStringL11nType $type;
 
     public string $info = '';

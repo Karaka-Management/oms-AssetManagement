@@ -85,7 +85,7 @@ final class BackendController extends Controller
         $view = new View($this->app->l11nManager, $request, $response);
 
         $view->setTemplate('/Modules/AssetManagement/Theme/Backend/asset-view');
-        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1008402001, $request, $response);
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1006601001, $request, $response);
 
         $view->data['asset'] = AssetMapper::get()
             ->with('attributes')
@@ -130,6 +130,11 @@ final class BackendController extends Controller
             ->executeGetArray();
 
         $view->data['units'] = UnitMapper::getAll()
+            ->executeGetArray();
+
+        $view->data['attributeTypes'] = AssetAttributeTypeMapper::getAll()
+            ->with('l11n')
+            ->where('l11n/language', $response->header->l11n->language)
             ->executeGetArray();
 
         $view->data['attributeView']                               = new \Modules\Attribute\Theme\Backend\Components\AttributeView($this->app->l11nManager, $request, $response);

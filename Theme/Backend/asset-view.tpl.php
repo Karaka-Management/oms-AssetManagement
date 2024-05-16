@@ -33,14 +33,14 @@ $assetTypes = $this->data['types'] ?? [];
  */
 echo $this->data['nav']->render();
 ?>
-<div class="tabview tab-2">
+<div id="iAssetView" class="tabview tab-2 url-rewrite">
     <div class="box">
         <ul class="tab-links">
             <li><label for="c-tab-1"><?= $this->getHtml('Asset'); ?></label>
             <li><label for="c-tab-2"><?= $this->getHtml('Attributes'); ?></label>
             <li><label for="c-tab-3"><?= $this->getHtml('Files'); ?></label>
             <li><label for="c-tab-4"><?= $this->getHtml('Notes'); ?></label>
-            <li><label for="c-tab-8"><?= $this->getHtml('Costs'); ?></label>
+            <!--<li><label for="c-tab-5"><?= $this->getHtml('Costs'); ?></label>-->
         </ul>
     </div>
     <div class="tab-content">
@@ -49,7 +49,7 @@ echo $this->data['nav']->render();
             <div class="row">
                 <div class="col-xs-12 col-md-6">
                     <section class="portlet">
-                        <div class="portlet-head"><?= $this->getHtml('Profile'); ?></div>
+                        <div class="portlet-head"><?= $this->getHtml('Asset'); ?></div>
                         <div class="portlet-body">
                             <div class="form-group">
                                 <label for="iAssetAssetProfileName"><?= $this->getHtml('Name'); ?></label>
@@ -57,13 +57,8 @@ echo $this->data['nav']->render();
                             </div>
 
                             <div class="form-group">
-                                <label for="iAssetDriver"><?= $this->getHtml('Driver'); ?></label>
-                                <input type="text" id="iAssetDriver" name="driver" value="" disabled>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="iAssetEin"><?= $this->getHtml('EIN'); ?></label>
-                                <input type="text" id="iAssetEin" name="vin" value="<?= $this->printHtml($asset->getAttribute('vin')->value->getValue()); ?>">
+                                <label for="iAssetCode"><?= $this->getHtml('Code'); ?></label>
+                                <input type="text" id="iAssetCode" name="code" value="<?= $this->printHtml($asset->number); ?>">
                             </div>
 
                             <div class="form-group">
@@ -76,22 +71,8 @@ echo $this->data['nav']->render();
                             </div>
 
                             <div class="form-group">
-                                <label for="iAssetEnd"><?= $this->getHtml('Type'); ?></label>
-                                <select id="iAssetEnd" name="asset_type">
-                                    <?php foreach ($assetTypes as $type) : ?>
-                                        <option value="<?= $type->id; ?>"<?= $asset->type->id === $type->id ? ' selected' : ''; ?>><?= $this->printHtml($type->getL11n()); ?>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="iAssetMake"><?= $this->getHtml('Make'); ?></label>
-                                <input type="text" id="iAssetMake" name="make" value="<?= $this->printHtml($asset->getAttribute('maker')->value->getValue()); ?>">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="iAssetModel"><?= $this->getHtml('Model'); ?></label>
-                                <input type="text" id="iAssetModel" name="asset_model" value="<?= $this->printHtml($asset->getAttribute('asset_model')->value->getValue()); ?>">
+                                <label for="iAssetLocation"><?= $this->getHtml('Location'); ?></label>
+                                <input type="text" id="iAssetLocation" name="location" value="<?= $this->printHtml($asset->number); ?>">
                             </div>
 
                             <div class="form-group">
@@ -160,7 +141,7 @@ echo $this->data['nav']->render();
             <?= $this->data['asset-notes']->render('asset-notes', '', $asset->notes); ?>
         </div>
 
-        <input type="radio" id="c-tab-8" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-8' ? ' checked' : ''; ?>>
+        <input type="radio" id="c-tab-5" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-5' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row">
                 <div class="col-xs-12 col-md-6">

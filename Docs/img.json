@@ -1,0 +1,22 @@
+[
+    [
+        "/accounting/asset/view?id=1",
+        "//*[@id=\"content\"]/div/div[2]/div[1]/div/div[1]/section",
+        "/AssetManagement/Docs/Help/img/asset/asset_general.png"
+    ],
+    [
+        "/accounting/asset/view?id=1#c-tab-2",
+        "//*[@id=\"content\"]/div/div[2]/div[2]/div",
+        "/AssetManagement/Docs/Help/img/asset/asset_attributes.png"
+    ],
+    [
+        "/accounting/asset/view?id=1#c-tab-3",
+        "//*[@id=\"content\"]/div/div[2]/div[3]/div",
+        "/AssetManagement/Docs/Help/img/asset/asset_files.png"
+    ],
+    [
+        "/accounting/asset/view?id=1#c-tab-4",
+        "//*[@id=\"content\"]/div/div[2]/div[4]/div",
+        "/AssetManagement/Docs/Help/img/asset/asset_notes.png"
+    ]
+]

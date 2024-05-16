@@ -1,14 +1,14 @@
 # Introduction
 
-The **Tasks** module allows users to create to do's for themselves and for other users. Tasks  can be shared and worked on with multiple users.  It is also possible to attach files and tags for easier categorization and better search. Tasks can also be forwarded from one user to another.
+The **Asset Management** module allows users to create and manage assets for accounting purposes. Assets can have general information stored in the asset master file as well as different depreciation types.
 
-##  Garget Group
+## Target Group
 
-The target group for this module is everyone who wants to manage their to do in an application either for themselves or in an organization structure.
+The target group for this module is the accounting department.
 
 # Setup
 
-This module doesn't have any additional setup requirements since it is installed during the application install process.
+This module doesn't have any additional setup requirements.
 
 # Features
 
@@ -16,17 +16,13 @@ This module doesn't have any additional setup requirements since it is installed
 
 Upload or link already uploaded files.
 
-## Tags
+## Attributes
 
-Add tags to tasks for categorization and improved search.
+Create and add custom attributes
 
-## Forwarding
+## Notes
 
-Tasks can be forwarded from one user to another.
-
-# Dependencies
-
-* [Finance](Finance)
+Create custom notes
 
 # Recommendation
 

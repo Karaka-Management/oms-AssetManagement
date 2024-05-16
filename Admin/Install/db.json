@@ -77,6 +77,11 @@
                 "type": "VARCHAR(255)",
                 "null": false
             },
+            "assetmgmt_asset_location": {
+                "name": "assetmgmt_asset_location",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
             "assetmgmt_asset_status": {
                 "name": "assetmgmt_asset_status",
                 "type": "TINYINT",
@@ -166,13 +171,13 @@
                 "null": false
             },
             "assetmgmt_attr_type_required": {
-                "description": "Every asset must have this attribute type if set to true.",
+                "comment": "Every asset must have this attribute type if set to true.",
                 "name": "assetmgmt_attr_type_required",
                 "type": "TINYINT(1)",
                 "null": false
             },
             "assetmgmt_attr_type_pattern": {
-                "description": "This is a regex validation pattern.",
+                "comment": "This is a regex validation pattern.",
                 "name": "assetmgmt_attr_type_pattern",
                 "type": "VARCHAR(255)",
                 "null": false
