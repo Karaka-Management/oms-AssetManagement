@@ -181,7 +181,7 @@ final class ApiController extends Controller
         }
 
         /** @var \Modules\AssetManagement\Models\Asset $asset */
-        $asset = AssetMapper::get()->where('id', (int) $request->getData('asset'))->execute();
+        $asset = AssetMapper::get()->where('id', (int) $request->getData('ref'))->execute();
         $path  = $this->createAssetDir($asset);
 
         $uploaded = new NullCollection();
@@ -249,7 +249,7 @@ final class ApiController extends Controller
     {
         $val = [];
         if (($val['media'] = (!$request->hasData('media') && empty($request->files)))
-            || ($val['asset'] = !$request->hasData('asset'))
+            || ($val['ref'] = !$request->hasData('ref'))
         ) {
             return $val;
         }
@@ -279,7 +279,7 @@ final class ApiController extends Controller
             return;
         }
 
-        $request->setData('virtualpath', '/Modules/AssetManagement/Asset/' . $request->getData('id'), true);
+        $request->setData('virtualpath', '/Modules/AssetManagement/Asset/' . $request->getData('ref'), true);
         $this->app->moduleManager->get('Editor', 'Api')->apiEditorCreate($request, $response, $data);
 
         if ($response->header->status !== RequestStatusCode::R_200) {
@@ -292,7 +292,7 @@ final class ApiController extends Controller
         }
 
         $model = $responseData['response'];
-        $this->createModelRelation($request->header->account, (int) $request->getData('id'), $model->id, AssetMapper::class, 'notes', '', $request->getOrigin());
+        $this->createModelRelation($request->header->account, (int) $request->getData('ref'), $model->id, AssetMapper::class, 'notes', '', $request->getOrigin());
     }
 
     /**
@@ -307,7 +307,7 @@ final class ApiController extends Controller
     private function validateNoteCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['id'] = !$request->hasData('id'))
+        if (($val['ref'] = !$request->hasData('ref'))
         ) {
             return $val;
         }

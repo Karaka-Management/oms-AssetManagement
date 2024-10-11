@@ -75,7 +75,7 @@ final class ApiAssetTypeController extends Controller
     {
         $assetType = new AssetType();
         $assetType->setL11n(
-            $request->getDataString('title') ?? '',
+            $request->getDataString('content') ?? '',
             ISO639x1Enum::tryFromValue($request->getDataString('language')) ?? ISO639x1Enum::_EN
         );
         $assetType->depreciationDuration = $request->getDataInt('duration') ?? 0;
@@ -96,7 +96,7 @@ final class ApiAssetTypeController extends Controller
     private function validateAssetTypeCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['title'] = !$request->hasData('title'))
+        if (($val['content'] = !$request->hasData('content'))
         ) {
             return $val;
         }
@@ -143,9 +143,9 @@ final class ApiAssetTypeController extends Controller
     private function createAssetTypeL11nFromRequest(RequestAbstract $request) : BaseStringL11n
     {
         $assetTypeL11n           = new BaseStringL11n();
-        $assetTypeL11n->ref      = $request->getDataInt('type') ?? 0;
+        $assetTypeL11n->ref      = $request->getDataInt('ref') ?? 0;
         $assetTypeL11n->language = ISO639x1Enum::tryFromValue($request->getDataString('language')) ?? $request->header->l11n->language;
-        $assetTypeL11n->content  = $request->getDataString('title') ?? '';
+        $assetTypeL11n->content  = $request->getDataString('content') ?? '';
 
         return $assetTypeL11n;
     }
@@ -162,8 +162,8 @@ final class ApiAssetTypeController extends Controller
     private function validateAssetTypeL11nCreate(RequestAbstract $request) : array
     {
         $val = [];
-        if (($val['title'] = !$request->hasData('title'))
-            || ($val['type'] = !$request->hasData('type'))
+        if (($val['content'] = !$request->hasData('content'))
+            || ($val['ref'] = !$request->hasData('ref'))
         ) {
             return $val;
         }

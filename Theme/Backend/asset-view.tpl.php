@@ -133,12 +133,12 @@ echo $this->data['nav']->render();
 
         <input type="radio" id="c-tab-3" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-3' ? ' checked' : ''; ?>>
         <div class="tab col-simple">
-            <?= $this->data['media-upload']->render('asset-file', 'files', '', $asset->files); ?>
+            <?= $this->data['media-upload']->render('asset-file', 'files', '', $asset->files, '{/api}accounting/asset/file?csrf={$CSRF}', (string) $item->id); ?>
         </div>
 
         <input type="radio" id="c-tab-4" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-4' ? ' checked' : ''; ?>>
         <div class="tab">
-            <?= $this->data['asset-notes']->render('asset-notes', '', $asset->notes); ?>
+            <?= $this->data['asset-notes']->render('asset-notes', '', $asset->notes, '{/api}accounting/asset/note?csrf={$CSRF}', (string) $asset->id); ?>
         </div>
 
         <input type="radio" id="c-tab-5" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-5' ? ' checked' : ''; ?>>
