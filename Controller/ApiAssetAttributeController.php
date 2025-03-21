@@ -63,14 +63,14 @@ final class ApiAssetAttributeController extends Controller
 
         $type = AssetAttributeTypeMapper::get()
             ->with('defaults')
-            ->where('id', (int) $request->getData('type'))
+            ->where('id', $request->getDataInt('type') ?? 0)
             ->execute();
 
         if (!$type->isRepeatable) {
             $attr = AssetAttributeMapper::count()
                 ->with('type')
                 ->where('type/id', $type->id)
-                ->where('ref', (int) $request->getData('ref'))
+                ->where('ref', $request->getDataInt('ref') ?? 0)
                 ->executeCount();
 
             if ($attr > 0) {
@@ -243,7 +243,7 @@ final class ApiAssetAttributeController extends Controller
             ->with('type')
             ->with('type/defaults')
             ->with('value')
-            ->where('id', (int) $request->getData('id'))
+            ->where('id', $request->getDataInt('id') ?? 0)
             ->execute();
 
         $new = $this->updateAttributeFromRequest($request, clone $old);
@@ -291,7 +291,7 @@ final class ApiAssetAttributeController extends Controller
 
         $assetAttribute = AssetAttributeMapper::get()
             ->with('type')
-            ->where('id', (int) $request->getData('id'))
+            ->where('id', $request->getDataInt('id') ?? 0)
             ->execute();
 
         if ($assetAttribute->type->isRequired) {
@@ -327,7 +327,7 @@ final class ApiAssetAttributeController extends Controller
         }
 
         /** @var BaseStringL11n $old */
-        $old = AssetAttributeTypeL11nMapper::get()->where('id', (int) $request->getData('id'))->execute();
+        $old = AssetAttributeTypeL11nMapper::get()->where('id', $request->getDataInt('id') ?? 0)->execute();
         $new = $this->updateAttributeTypeL11nFromRequest($request, clone $old);
 
         $this->updateModel($request->header->account, $old, $new, AssetAttributeTypeL11nMapper::class, 'asset_attribute_type_l11n', $request->getOrigin());
@@ -357,7 +357,7 @@ final class ApiAssetAttributeController extends Controller
         }
 
         /** @var BaseStringL11n $assetAttributeTypeL11n */
-        $assetAttributeTypeL11n = AssetAttributeTypeL11nMapper::get()->where('id', (int) $request->getData('id'))->execute();
+        $assetAttributeTypeL11n = AssetAttributeTypeL11nMapper::get()->where('id', $request->getDataInt('id') ?? 0)->execute();
         $this->deleteModel($request->header->account, $assetAttributeTypeL11n, AssetAttributeTypeL11nMapper::class, 'asset_attribute_type_l11n', $request->getOrigin());
         $this->createStandardDeleteResponse($request, $response, $assetAttributeTypeL11n);
     }
@@ -385,7 +385,7 @@ final class ApiAssetAttributeController extends Controller
         }
 
         /** @var AttributeType $old */
-        $old = AssetAttributeTypeMapper::get()->with('defaults')->where('id', (int) $request->getData('id'))->execute();
+        $old = AssetAttributeTypeMapper::get()->with('defaults')->where('id', $request->getDataInt('id') ?? 0)->execute();
         $new = $this->updateAttributeTypeFromRequest($request, clone $old);
 
         $this->updateModel($request->header->account, $old, $new, AssetAttributeTypeMapper::class, 'asset_attribute_type', $request->getOrigin());
@@ -417,7 +417,7 @@ final class ApiAssetAttributeController extends Controller
         }
 
         /** @var AttributeType $assetAttributeType */
-        $assetAttributeType = AssetAttributeTypeMapper::get()->with('defaults')->where('id', (int) $request->getData('id'))->execute();
+        $assetAttributeType = AssetAttributeTypeMapper::get()->with('defaults')->where('id', $request->getDataInt('id') ?? 0)->execute();
         $this->deleteModel($request->header->account, $assetAttributeType, AssetAttributeTypeMapper::class, 'asset_attribute_type', $request->getOrigin());
         $this->createStandardDeleteResponse($request, $response, $assetAttributeType);
     }
@@ -445,7 +445,7 @@ final class ApiAssetAttributeController extends Controller
         }
 
         /** @var AttributeValue $old */
-        $old = AssetAttributeValueMapper::get()->where('id', (int) $request->getData('id'))->execute();
+        $old = AssetAttributeValueMapper::get()->where('id', $request->getDataInt('id') ?? 0)->execute();
 
         /** @var \Modules\Attribute\Models\Attribute $attr */
         $attr = AssetAttributeMapper::get()
@@ -485,7 +485,7 @@ final class ApiAssetAttributeController extends Controller
         // }
 
         // /** @var \Modules\AssetManagement\Models\AssetAttributeValue $assetAttributeValue */
-        // $assetAttributeValue = AssetAttributeValueMapper::get()->where('id', (int) $request->getData('id'))->execute();
+        // $assetAttributeValue = AssetAttributeValueMapper::get()->where('id', $request->getDataInt('id') ?? 0)->execute();
         // $this->deleteModel($request->header->account, $assetAttributeValue, AssetAttributeValueMapper::class, 'asset_attribute_value', $request->getOrigin());
         // $this->createStandardDeleteResponse($request, $response, $assetAttributeValue);
     }
@@ -513,7 +513,7 @@ final class ApiAssetAttributeController extends Controller
         }
 
         /** @var BaseStringL11n $old */
-        $old = AssetAttributeValueL11nMapper::get()->where('id', (int) $request->getData('id'));
+        $old = AssetAttributeValueL11nMapper::get()->where('id', $request->getDataInt('id') ?? 0);
         $new = $this->updateAttributeValueL11nFromRequest($request, clone $old);
 
         $this->updateModel($request->header->account, $old, $new, AssetAttributeValueL11nMapper::class, 'asset_attribute_value_l11n', $request->getOrigin());
@@ -543,7 +543,7 @@ final class ApiAssetAttributeController extends Controller
         }
 
         /** @var BaseStringL11n $assetAttributeValueL11n */
-        $assetAttributeValueL11n = AssetAttributeValueL11nMapper::get()->where('id', (int) $request->getData('id'))->execute();
+        $assetAttributeValueL11n = AssetAttributeValueL11nMapper::get()->where('id', $request->getDataInt('id') ?? 0)->execute();
         $this->deleteModel($request->header->account, $assetAttributeValueL11n, AssetAttributeValueL11nMapper::class, 'asset_attribute_value_l11n', $request->getOrigin());
         $this->createStandardDeleteResponse($request, $response, $assetAttributeValueL11n);
     }

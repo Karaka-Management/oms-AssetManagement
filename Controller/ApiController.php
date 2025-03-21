@@ -355,7 +355,7 @@ final class ApiController extends Controller
         }
 
         /** @var \Modules\AssetManagement\Models\Asset $old */
-        $old = AssetMapper::get()->where('id', (int) $request->getData('id'))->execute();
+        $old = AssetMapper::get()->where('id', $request->getDataInt('id') ?? 0)->execute();
         $new = $this->updateAssetFromRequest($request, clone $old);
 
         $this->updateModel($request->header->account, $old, $new, AssetMapper::class, 'asset', $request->getOrigin());
@@ -429,7 +429,7 @@ final class ApiController extends Controller
         }
 
         /** @var \Modules\AssetManagement\Models\Asset $asset */
-        $asset = AssetMapper::get()->where('id', (int) $request->getData('id'))->execute();
+        $asset = AssetMapper::get()->where('id', $request->getDataInt('id') ?? 0)->execute();
         $this->deleteModel($request->header->account, $asset, AssetMapper::class, 'asset', $request->getOrigin());
         $this->createStandardDeleteResponse($request, $response, $asset);
     }

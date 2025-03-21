@@ -194,7 +194,7 @@ final class ApiAssetTypeController extends Controller
         }
 
         /** @var BaseStringL11nType $old */
-        $old = AssetTypeMapper::get()->where('id', (int) $request->getData('id'));
+        $old = AssetTypeMapper::get()->where('id', $request->getDataInt('id') ?? 0);
         $new = $this->updateAssetTypeFromRequest($request, clone $old);
 
         $this->updateModel($request->header->account, $old, $new, AssetTypeMapper::class, 'asset_type', $request->getOrigin());
@@ -264,7 +264,7 @@ final class ApiAssetTypeController extends Controller
         }
 
         /** @var BaseStringL11nType $assetType */
-        $assetType = AssetTypeMapper::get()->where('id', (int) $request->getData('id'))->execute();
+        $assetType = AssetTypeMapper::get()->where('id', $request->getDataInt('id') ?? 0)->execute();
         $this->deleteModel($request->header->account, $assetType, AssetTypeMapper::class, 'asset_type', $request->getOrigin());
         $this->createStandardDeleteResponse($request, $response, $assetType);
     }
@@ -311,7 +311,7 @@ final class ApiAssetTypeController extends Controller
         }
 
         /** @var BaseStringL11n $old */
-        $old = AssetTypeL11nMapper::get()->where('id', (int) $request->getData('id'));
+        $old = AssetTypeL11nMapper::get()->where('id', $request->getDataInt('id') ?? 0);
         $new = $this->updateAssetTypeL11nFromRequest($request, clone $old);
 
         $this->updateModel($request->header->account, $old, $new, AssetTypeL11nMapper::class, 'asset_type_l11n', $request->getOrigin());
@@ -378,7 +378,7 @@ final class ApiAssetTypeController extends Controller
         }
 
         /** @var BaseStringL11n $assetTypeL11n */
-        $assetTypeL11n = AssetTypeL11nMapper::get()->where('id', (int) $request->getData('id'))->execute();
+        $assetTypeL11n = AssetTypeL11nMapper::get()->where('id', $request->getDataInt('id') ?? 0)->execute();
         $this->deleteModel($request->header->account, $assetTypeL11n, AssetTypeL11nMapper::class, 'asset_type_l11n', $request->getOrigin());
         $this->createStandardDeleteResponse($request, $response, $assetTypeL11n);
     }
